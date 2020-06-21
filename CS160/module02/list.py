@@ -7,3 +7,6 @@ print('value available at index 2: ')
 print(list1[2])
 print("list2[1:5]: ", list2[1:5])
 
+#append
+list1.append(2020)
+print("new list: ", list1)
