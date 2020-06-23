@@ -178,7 +178,6 @@ if bGo == True:
 else:
     x = -999
     print("Don't try this number since it may not be a correct value")
-'''
 
 # How about storing a first character of each string to a list?
 strings = ["How", "are", "you", "today", "John?", "", "!@!", ""]
@@ -188,3 +187,48 @@ for s in strings:
     if len(s) > 0 and s[0].isupper():
         out.append(s[])
 print(out)
+
+
+f = None  
+
+for i in range (5):  
+
+   with open("data.txt", "w") as f:  
+
+        if i > 2:  
+
+            break  
+
+print(f.closed) 
+
+class Dog: 
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+Dog("Rufus", 3)
+
+print(Dog)
+
+'''
+
+class Dog: 
+
+    def walk(self): 
+
+        return "*walking*" 
+
+    def speak(self): 
+
+        return "Woof!" 
+
+ 
+
+class JackRussellTerrier(Dog): 
+
+    def speak(self): 
+
+        return "Arff!" 
+
+bobo = JackRussellTerrier() 
+
+print(bobo.walk()) 
