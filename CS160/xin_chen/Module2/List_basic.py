@@ -4,7 +4,7 @@ print("list1[0]: ", list1[0])
 print("list2[0]: ", list2[1:5])
 
 
-print("Value available at index 2 : ")
+print("Value available at index 2: ")
 print(list1[2])
 list1[2] = 2001
 print("New value available at index 2 : ")
