@@ -96,7 +96,7 @@ def Merge(dict1, dict2):
 dict3 = Merge(dict1, dict2)
 
 print(dict3)
-'''
+
 
 ### PE04 - Make_Shirt function
 
@@ -110,7 +110,7 @@ print(dict3)
 # 2. function1()
 # 1. main
 
-'''
+
 def function1(name):
     print(f"{msg} {name}!")
     function2(name, msg)
