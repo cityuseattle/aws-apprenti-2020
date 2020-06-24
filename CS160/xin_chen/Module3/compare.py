@@ -1,8 +1,20 @@
-# comparing between lists and dictionarys
-first = ['cats', 'dogs', 55]
-second = ['dogs', 55, 'cats']
-print(first == second)
+class Restaurant():
 
-first_dict = {'name': 'aaa', 'species': 'human', 'age': 20}
-second_dict = {'species': 'human', 'age': 20, 'name': 'aaa'}
-print(first_dict == second_dict)
+    def __init__(self, restaurant_name=None, cuisine_type=None):
+        self.name = restaurant_name
+        self.type = cuisine_type
+
+    def describe_restaurant(self):
+        print(self.name)
+        print(self.type)
+
+    def open_restaurant(self):
+        print(f"The restaurant is open. Welcome to {self.name}")
+
+restanrant = Restaurant("Hibachi Buffet", "Chinese&Japanese Cusine")
+restanrant.describe_restaurant()
+restanrant.open_restaurant()
+
+restanrant2 = Restaurant("Jamica No.1", "Jamican Food")
+restanrant2.describe_restaurant()
+restanrant2.open_restaurant()

@@ -1,5 +1,9 @@
-# get the bigger value of a dict by value
-income = {'Alice': 90000, 'Bob': 100000, 'Jeff': 200000, 'Apiwat': 999998, 'Stark': 999999}
-highest = max(income, key=income.get)
-print('The richest man on earth:', end=' ')
-print(highest + ' with $' + str(income[highest]))
+while True:
+    try:
+        num1 = int(input("Please enter a number: "))
+        num2 = int(input("Please enter another number: "))
+        sum = num1 + num2
+        print("Good number" + ", the sum of the two number is : " + str(sum))
+        break
+    except ValueError:
+        print("Invalid input, please enter it again.")
