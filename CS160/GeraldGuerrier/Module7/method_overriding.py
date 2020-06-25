@@ -1,5 +1,5 @@
 class person:
-    def _init_(self, name, age):
+    def __init__(self, name, age):
         self.name = name
         self.age = age
 
@@ -9,7 +9,7 @@ class person:
         print(self.age)
 
 class Employee(person):
-    def _init_(self, name, age, id):
+    def __init__(self, name, age, id):
         #calling constructor of super class
         super().__init__(name, age)
         self.empId = id 
