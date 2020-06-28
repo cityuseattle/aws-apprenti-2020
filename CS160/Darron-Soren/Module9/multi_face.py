@@ -8,7 +8,7 @@ def multi_face():
     resize = img.resize((int(width//4), int(height//4)))
 
     flip = resize.transpose (Image.FLIP_LEFT_RIGHT)
-    fwidth, fheight, = flip.size
+    fwidth, fheight = flip.size
 
     pattern = Image.new('RGBA', (590, 428), 'green')
 
@@ -18,6 +18,6 @@ def multi_face():
             pattern.paste(flip, (left, top))
     pattern.save('multi_face.png')
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     multi_face()
      
