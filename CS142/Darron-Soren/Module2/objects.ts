@@ -1,4 +1,4 @@
-let employee: {readonly id: number, name: string} = {
+let employee: {id: number, name: string} = {
     id: 377,
     name: 'Kevin'
 };
