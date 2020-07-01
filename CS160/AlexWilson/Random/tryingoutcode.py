@@ -209,26 +209,12 @@ Dog("Rufus", 3)
 
 print(Dog)
 
+
+str1 = 'a:b:c.d/e-f'
+
+print(str1.split(':'))
 '''
 
-class Dog: 
+a={3,4,{7,5}} 
 
-    def walk(self): 
-
-        return "*walking*" 
-
-    def speak(self): 
-
-        return "Woof!" 
-
- 
-
-class JackRussellTerrier(Dog): 
-
-    def speak(self): 
-
-        return "Arff!" 
-
-bobo = JackRussellTerrier() 
-
-print(bobo.walk()) 
+print(a[2][0]) 
