@@ -6,7 +6,7 @@ interface IKeyValueProcessor<T, U>
 class kvProcessor<T, U> implements IKeyValueProcessor<T, U>
 {
     process(key:T, val:U):void {
-        console.log('Key = ${key}, val = ${key}');
+        console.log(`Key = ${key}, val = ${key}`);
     }
 }
 
