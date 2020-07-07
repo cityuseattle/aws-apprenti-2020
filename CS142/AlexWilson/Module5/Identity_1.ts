@@ -3,4 +3,4 @@ function identity1<T>(arg:T): T {
 }
 
 let output_1 = identity1<string>("myString")
-console.log(output)
+console.log(output_1)

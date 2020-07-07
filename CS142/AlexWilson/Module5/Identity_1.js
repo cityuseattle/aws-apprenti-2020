@@ -1,7 +1,5 @@
-function identity(arg) {
+function identity1(arg) {
     return arg;
 }
-// let output = identity<string>("myString")
-// console.log(output)
-var output = identity("myString");
-console.log(output);
+var output_1 = identity1("myString");
+console.log(output_1);
