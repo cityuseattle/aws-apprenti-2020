@@ -12,7 +12,7 @@ module.exports = {
         ]
     },
     devServer: {
-        contentBase: "./assests",
-        port: 4500
+        contentBase: "./assets",
+        port: 4800
     }
 };
