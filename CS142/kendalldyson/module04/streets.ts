@@ -35,6 +35,6 @@ export class Street {
     }
 
     printTraffic() {
-        console.log('There are ${this.traffic} vehicles on ${this.name}.');
+        console.log(`there are ${this.traffic} vehicles on ${this.name}.`); 
     }
 }

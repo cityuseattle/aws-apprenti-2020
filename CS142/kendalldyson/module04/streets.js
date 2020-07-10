@@ -25,7 +25,7 @@ var Street = /** @class */ (function () {
         this.traffic = (this.traffic - num > 0) ? (this.traffic - num) : 0;
     };
     Street.prototype.printTraffic = function () {
-        console.log('There are ${this.traffic} vehicles on ${this.name}.');
+        console.log("there are " + this.traffic + " vehicles on " + this.name + ".");
     };
     return Street;
 }());
