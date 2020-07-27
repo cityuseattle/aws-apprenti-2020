@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+var street_1 = require("./street");
+var vehicle_1 = require("./vehicle");
+var wallStreet = new street_1.Street('Wall Street', 25, 3, false);
+var tesla = [new vehicle_1.Car(true, 5, 'Electric', 20)];
+var toyota = [new vehicle_1.Car(true, 5, 'Hybrid', 25), new vehicle_1.Car(true, 5, 'Gasoline', 22)];
+var honda = [new vehicle_1.Motorcycle(true, 1, 'Gasoline', 23)];
+wallStreet.increaseTraffic(tesla.length + toyota.length + honda.length);
+wallStreet.printTraffic();
+toyota[1].setSpeed(70);
+toyota[1].drift();
