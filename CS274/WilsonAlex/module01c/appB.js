@@ -4,8 +4,9 @@ const port = 3002;
 
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hellow World');
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+    let output = `<h1>This is your server-side native Node web app.</h1>`;
+    res.end(output);
 });
 
 server.listen(port, hostname, () => {
