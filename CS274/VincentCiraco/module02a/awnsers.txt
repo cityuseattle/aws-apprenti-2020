@@ -1,0 +1,23 @@
+6.C. we use npm start because we created this command in package,json to start the application.
+6.D. package-lock. json is automatically generated for any operations where npm modifies either the node_modules tree, or package. json. contains dependancies.
+7.A. www. creates te server after npm start is called and runs the www file(server configuration). line 7
+7.B. on line 75 the const port is created and set to 3000. then the port is set to 3000 in line 76
+8.A. there are three external packages being imported to app.js
+     they are express, cookieparser and bodyparser. 
+8.b. the pug view engine is used, views directory is located at module02a/gettingMEAN/views
+8.c. two routes are used to /usrs/ and /index
+8.d.the public directory services static assets. 
+8.e two, line 29 / 36- catch 404 and error handler
+8.f.2 , 404 / 500. 404 - not found, 500 - internal server error.
+8.g. identity - 1 - line 39 - it compares the environment of the app to the development environmment ? I am not too sure. 
+     or - 1 - line 42 - status is set to error status or error 500
+     conditional - 1  - line 39 - if the condition before the operator is true then the function is ran again with an err condition else if it is false the function ends.
+8.h. express module is exported
+9. no it is in the git ignore file. 
+10. 5 subdirectories
+    each directory functions as a seperate portion of the project to compartmentalize code. ie. routes containing the routes, views containing all views referred to. 
+    bin - node_modules - public/stylesheets - routes - views
+11.the files related to the output at this state are the view, the stylesheets and the index.js
+    view is the layout, style is well... the style,  and the index is the page control. 
+
+     
