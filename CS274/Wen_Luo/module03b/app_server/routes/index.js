@@ -12,3 +12,5 @@ const router = express.Router();
 const ctrlMain = require('../controllers/main');
 //2. Reference the index method of the controllers in the route definition.
 router.get('/', ctrlMain.index);
+
+module.exports = router;
