@@ -13,3 +13,6 @@ const server = http.createServer((req, res) => {
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
+
+//Instead of res.end('output\n'), use let keyword for output argument to end()
+//Different way to close the response
