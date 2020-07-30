@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    <!-- 4. Set the viewport metadata for better display on mobile devices-->
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    title= title
+    <!-- 1. Include Bootstrap and Font Awesome CSS-->
+    link(rel="stylesheet", href='/stylesheets/mdb.min.css')
+    link(rel="stylesheet", href='/stylesheets/all.min.css')
+    
+    link(rel='stylesheet', href='/stylesheets/style.css')
+      
+  body
+    block content
+    <!-- 3. Bring in JQuery and Popper, needed for Boostrap-->
+    script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js'
+			  integrity='sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs='
+			  crossorigin='anonymous')
+    script(src="https://unpkg.com/@popperjs/core@2")
+  
+    <!-- 2. Bring in the Bootstrap & JS file-->
+    script(src='/javascripts/mdb.min.js')
