@@ -1,0 +1,57 @@
+doctype html
+html
+  head
+    <!-- 4. Set the viewport metadata for better display on mobile devices-->
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    title= title
+    <!-- 1. Include Bootstrap and Font Awesome CSS-->
+    link(rel="stylesheet", href='/stylesheets/mdb.min.css')
+    link(rel="stylesheet", href='/stylesheets/all.min.css')
+    
+    link(rel='stylesheet', href='/stylesheets/style.css')
+      
+  body
+
+    // Navbar
+    nav.mb-1.navbar.navbar-expand-md
+      .container-fluid
+        a.navbar-brand(href='/') Loc8r
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent-555', aria-controls='navbarSupportedContent-555', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        
+        #navbarSupportedContent-555.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item.active
+              a.nav-link(href='/location')
+                | Location info
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href='/about') About
+          ul.navbar-nav.ml-auto.nav-flex-icons
+            li.nav-item
+              a.nav-link.waves-effect.waves-light
+                i.fab.fa-twitter
+            li.nav-item.avatar
+              a.nav-link.p-0(href='#')
+                img.rounded-circle.z-depth-0(src='https://media.giphy.com/media/PVfSR2nddzGz6/giphy.gif', alt='avatar image', height='35')
+    .container.content
+      block content
+
+      br
+      // Footer
+      footer.page-footer.font-small
+        .footer-copyright.text-center.py-3
+          a(href='https://mdbootstrap.com/')  MDBootstrap.com
+            | 2020 Copyright
+            br
+            | Following Getting MEAN: Simon Holmes / Clive Harver 2018 Copyright
+
+    <!-- 3. Bring in JQuery and Popper, needed for Boostrap-->
+    script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js'
+			  integrity='sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs='
+			  crossorigin='anonymous')
+    script(src="https://unpkg.com/@popperjs/core@2")
+  
+    <!-- 2. Bring in the Bootstrap & JS file-->
+    script(src='/javascripts/mdb.min.js')
