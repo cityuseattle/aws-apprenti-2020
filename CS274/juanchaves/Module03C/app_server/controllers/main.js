@@ -1,0 +1,11 @@
+/* GET home page. */
+// 1. Cerate an index function
+// 2. Include controller code for the homepage.
+const index = (req, res) => {
+  res.render('index', { title: 'Express - Chapter 3' });
+};
+
+// 3. Expose the index function as a method.
+module.exports = {
+  index
+};
