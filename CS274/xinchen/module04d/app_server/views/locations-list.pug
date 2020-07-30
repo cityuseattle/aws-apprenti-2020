@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    .row.banner
+        .col-12
+            h1 Loc8r
+                small &nbsp;Find places to work with wifi near you!
+
+    .row
+        .col-12.col-md-8
+            p List area. 
+            .card
+                .card-block
+                    // Name of the listing and a link to the location
+                    h4
+                        a(href="/location") Starcups  
+                        // Use Font Awesome icons to output a star rating
+                        small &nbsp;
+                            i.fas.fa-star  
+                            i.fas.fa-star  
+                            i.fas.fa-star  
+                            i.fas.fa-star  
+                            i.fas.fa-star 
+                        // Use Bootstrap's badge helper class to display the distance away
+                        span.badge.badge-pill.badge-default.float-right 100m 
+                    p.address 123 High Street, Reading, RG6 1PS
+
+                    // Facilities of the location, output using Bootstrap's badge classes
+                    .facilities
+                        span.badge.badge-warning Hot drinks
+                        span.badge.badge-warning Food
+                        span.badge.badge-warning Premium Wifi
