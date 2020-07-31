@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  //h1= title
+  //p Welcome to #{title}
+
+  // Page header that fills the entire width of the screen
+  .row.banner
+    .col-12
+        h1 Loc8r
+            small &nbsp;Find places to work with wifi near you!
+
+  .row
+    // Container for the list of locations, spanning all 12 columns on extra-small
+    .col-12.col-md-8
+      p List area.
+
+    // Container for secondary or sidebar information, spanning all 12 columns on extra-small
+    .col-12.col-md-4
+        p.lead Loc8r helps you find places to work when out and about.
+  
+  .card
+    .card-block
+      h4
+        a(href="/location") Starcups
+        small &nbsp;
+          i.fas.fa-grin-stars(style='color:gold') 
+          i.fas.fa-grin-stars(style='color:gold')
+          i.fas.fa-grin-stars(style='color:gold')
+          i.far.fa-meh 
+          i.far.fa-meh
+        span.badge.badge-pill.badge-default.float-right 100m 
+      p.address 125 High Street, Reading, RG6 1PS
+      .facilities
+        span.badge.badge-warning Hot drinks 
+        span.badge.badge-warning Food 
+        span.badge.badge-warning Premium wifi
