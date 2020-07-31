@@ -1,0 +1,54 @@
+extends layout
+include _includes/sharedHTMLfunctions
+
+block content
+    //- h1= title
+    //- p Welcome to #{title}
+
+    // Page header that fills the entire width of the screen
+    .row.banner
+        .col-12
+            h1= pageHeader.title
+                small &nbsp; #{pageHeader.strapline}
+    
+    .row
+        // container for the list of locations, spanning all 12 columns on extra-small
+        .col-12.col-md-8
+            each location in locations
+                // Create a new Bootstrap card and card block to wrap the content
+                .card
+                    .card-block
+                        h4
+                            a(href="/location")= location.name
+                            small &nbsp;
+                            +outputRating(location.rating)
+                            span.badge.badge-pill.badge-default.float-right= location.distance
+                        p.address= location.address
+                        .facilities
+                            each facility in location.facilities
+                                span.badge.badge-warning= facility
+
+                        //-     // Use Font Awesome icons to output a start rating
+                        //-     small &nbsp;
+                        //-         i.fas.fa-star
+                        //-         i.fas.fa-star
+                        //-         i.fas.fa-star
+                        //-         i.fas.fa-star
+                        //-         i.fas.fa-star
+                        //-     // Use Bootstrap's badge helper class to display the distance away.
+                        //-     span.badge.badge-pill.badge-default.float-right 100m
+
+                        //- //Address of the location
+                        //- p.address 125 High Street, Reading, RG6 1PS
+
+                        //- // Facilities of the location, output using Bootstrap's badge classes
+                        //- .facilities
+                        //-     span.badge.badge-warning Hot drinks
+                        //-     span.badge.badge-warning Food
+                        //-     span.badge.badge-warning Premium wifi
+
+                        
+                // Contrainer for secondary or sidebar information, spanning all 12 columns
+                .col-12.col-md-4
+                    p.lead= sidebar
+
