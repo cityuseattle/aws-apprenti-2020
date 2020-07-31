@@ -1,4 +1,4 @@
-const index = (res,req) => {
+const index = (req,res) => {
     res.render('index', {title: 'Express - Chapter 3'});
 
 };
