@@ -7,7 +7,7 @@ const locationInfo = (req, res) => {
 };
 
 const addReview = (req, res) => {
-    res.render('location-review-form', { title: 'Add review' });
+    res.render('location-review-form', { title: 'Review Starcups on loc8r', pageHeader: {title: 'Review Starcups' } });
 };
 
 module.exports = {
