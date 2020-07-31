@@ -1,0 +1,114 @@
+
+# 1. Write an one-line Python code that *always* rounds up to 
+# the next integer value. Assume that input value will be one decimal
+# point values such as 4.2, 4.3 but not 4.23, 4.324
+# (hint: use the type cast function, int())
+# e.g input: 4.0 output: 4
+# e.g input: 4.1 output: 5
+# e.g input: 4.5 output: 5
+# e.g input: 4.8 output: 5
+
+
+Answer:
+import math
+print(math.ceil(1.1))
+print(math.ceil(2.2))
+print(math.ceil(3.3))
+print(math.ceil(4.4))
+print(math.ceil(5.5))
+print(math.ceil(6.0))
+
+int(9.1 +0.9)
+
+Add 0.9 to anything
+
+
+#
+# 2. Write a Python code that prints the largest value in each sub-list
+# given the following list called list_num
+#
+list_num = [[6, 1, 2, 3], [5, 2, 11], [4, 9, 22], [-3, 9, 13], [10, 1]]
+
+Answer: 
+for i in range(len(list_num)):
+    print(max(list_num[i]), end="")
+    print("\n")
+
+
+
+#
+# 3. Given the following dictionaries, after combining 
+# the 2 dictionaries(d1 and d2) to a new dictionary called d3,
+# then traverse the d3 and print the letter (key) where its 
+# count (value) is greater than 3
+#
+d1 = {'a': 10, 'b': 2, 'd': 6, 'e': 1}
+d2 = {'f': 6, 'g': 1}
+
+Answer:
+d1 = {'a': 10, 'b': 2, 'd': 6, 'e': 1}
+d2 = {'f': 6, 'g': 1}
+
+d3 = {**d1, **d2}
+for letter, count in d3.items():
+    if count > 3:
+        print(letter)
+
+print(d3)
+
+
+
+#
+# 4. I am writing the following code to print words that start
+# with a capital letter. However, it is giving me a run-time error.
+# Find the root cause, and modify the code so that it runs 
+# without any error.
+# (hint: There are 3 errors)
+L = ["This", "is", "the", "last", "day", "of", "Python", "class", ""]
+for x in L:
+    if(x[1].upper() == True):
+        print(x)
+
+ANSWER:
+
+L = ['This', 'is', 'the', 'last', 'day', 'of', 'Python', 'class', '']
+for x in L:
+    if(len(x) > 0 and x[0].isupper() == True):
+        print(x)
+
+
+
+
+#
+# 5. Rewrite the for loop inside print1st function with the list   
+# comprehension.
+#
+def print1st(strings):
+    ''' print1st returns a list with first character of each string
+        stroed in the input list, 'strings' '''
+    out=[]
+    for s in strings:
+        if s[0].isupper():
+            out.append(s[0])
+    return out
+
+strings = ["How", "are", "you", "today", "John?", "123", " ", ""]
+print1st(strings)
+
+from: JIN
+for #5, please (1) fix the error and (2) rewrite the for loop inside with list comprehension.
+
+
+ANSWER:
+
+strings = ["How", "are", "you", "today", "John?", "123", " ", ""]
+print1st(strings)
+
+out = [s[0]] for s in strings if len(s) > 0 and s[0].isupper()]
+
+
+
+
+
+
+
