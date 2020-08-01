@@ -10,7 +10,10 @@ const locationInfo = (req, res) => {
 
 /* GET 'Add review' page */
 const addReview = (req, res) => {
-  res.render('location-review-form', { title: 'Add review' });
+  res.render('location-review-form', { 
+    title: 'Review Starcups on Loc8r',
+    pageHeader: { title: 'Review Starcups' }
+  });
 };
 
   // 3. Expose the index function as a method.
