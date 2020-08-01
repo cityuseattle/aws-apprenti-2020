@@ -1,47 +1,40 @@
 extends layout
-//include _includes/sharedHTMLfunctions
+include _includes/sharedHTMLfunctions
 
 block content
 	.row.banner
 		.col-12
-			h1 Starcups
+			h1= title
 	.row
 		.col-12.col-lg-9
 			.row
 				.col-12.col-md-6
-					p.rating
-						i.fas.fa-grin-stars(style='color:gold') 
-						i.fas.fa-grin-stars(style='color:gold')
-						i.fas.fa-grin-stars(style='color:gold')
-						i.far.fa-meh 
-						i.far.fa-meh
-					p 125 High Street, Reading, RG6 1PS
+					+outputRating(location.rating)
+					p.address= location.address
 					.card.card-primary
 						.card-block
 							h2.card-title Opening hours
-							p.card-text Monday - Friday : 7:00am - 7:00pm
-							p.card-text Saturday : 8:00am - 5:00pm
-							p.card-text Sunday : closed
+							each open in location.openingTimes
+								p.card-text
+								| #{open.days} :
+								if open.closed
+									|&nbsp;closed
+								else
+									|&nbsp;#{open.opening} - #{open.closing}
+								bk
 					.card.card-primary
 						.card-block
 							h2.card-title Facilities
-							span.badge.badge-warning
-								i.fa.fa-check
-								| &nbsp;Hot drinks
-							| &nbsp;
-							span.badge.badge-warning
-								i.fa.fa-check
-								| &nbsp;Food
-							| &nbsp;
-							span.badge.badge-warning
-								i.fa.fa-check
-								| &nbsp;Premium wifi
-							| &nbsp;
+							each facility in location.facilities
+								span.badge.badge-warning
+									i.fa.fa-check
+									| &nbsp;#{facility}
+								| &nbsp;&nbsp;
 				.col-12.col-md-6.location-map
 					.card.card-primary
 						.card-block
 							h2.card-title Location map
-							img.image-fluid.mw-50.mh-50.rounded(src="https://images.unsplash.com/photo-1468730533502-216da872eab2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=200", alt="Responsive image")
+							img.image-fluid.mw-50.mh-50.rounded(src=`${location.img.src}`, alt=`${location.img.alt}`)
           
 			.row
 				.col-12
@@ -50,32 +43,15 @@ block content
 							a.btn.purple-gradient.float-right(href='/location/review/new', role='button') 
 								| Add Review
 							h2.card-title Customer reviews
-							.row.review
-								.col-12.no-gutters.review-header
-									span.rating
-										i.fas.fa-grin-stars(style='color:gold') 
-										i.fas.fa-grin-stars(style='color:gold')
-										i.fas.fa-grin-stars(style='color:gold')
-										i.far.fa-meh 
-										i.far.fa-meh
-									span.reviewAuthor &nbsp;Simon Holmes
-									small.reviewTimestamp &nbsp;16 February 2017
-								.col-12
-									p &nbsp;What a great place.
-							.row.review
-								.col-12.no-gutters.review-header
-									span.rating
-										i.fas.fa-grin-stars(style='color:gold') 
-										i.fas.fa-grin-stars(style='color:gold')
-										i.fas.fa-grin-stars(style='color:gold')
-										i.far.fa-meh 
-										i.far.fa-meh
-									span.reviewAuthor &nbsp;Charlie Chaplin
-									small.reviewTimestamp &nbsp;14 February 2017
-								.col-12
-									p &nbsp;It was okay. Coffee wasn't great.
+							each review in location.reviews
+								.row.review
+									.col-12.no-gutters.review-header
+										span.rating
+											+outputRating(review.rating)
+										span.reviewAuthor &nbsp;#{review.author}
+										small.reviewTimestamp &nbsp;#{review.timestamp}
+									.col-12
+										p &nbsp;#{review.reviewText}
 		.col-12.col-lg-3
-			p.lead
-				| Starcups is on Loc8r because it has accessible wifi and space to sit down with your laptop and get some work done.
-			p
-				| If you've been and you like it - or if you don't - please leave a review to help other people just like you.
+			p.lead= `${title} is on ${pageHeader.title} because ${sidebar.context}`
+			p= sidebar.callToAction
