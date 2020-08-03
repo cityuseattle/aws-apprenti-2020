@@ -11,27 +11,30 @@ html
 
     link(rel='stylesheet', href='/stylesheets/style.css')
   
-body
-  nav.navbar.fixed-top.navbar-expand-md.navbar-light                    
-    .container
-      a.navbar-brand(href='/') Loc8r
-        button.navbar-toggler(type='button', data-toggle='collapse',data-target='#navbarMain')
-          span.navbar-toggler-icon
+  body
+  <!-- 1. Set uo a Bootstrap navigation bar fixed to the top of the window. -->
+    nav.navbar.fixed-top.navbar-expand-md.navbar-light                    
+      .container
+        <!-- Add a brand-styled link to the homepage. -->
+        a.navbar-brand(href='/') Loc8r
+        <!-- Set up collapsing navigation for smaller screen resolutions. -->
+          button.navbar-toggler(type='button', data-toggle='collapse',data-target='#navbarMain')
+            span.navbar-toggler-icon
 
 
-      #navbarMain.navbar-collapse.collapse
-        ul.navbar-nav.mr-auto
-          li.nav-item
-          <!-- 4. Add an About link to the left side of the bar. -->
-            a.nav-link(href='/about/') About   
+        #navbarMain.navbar-collapse.collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item
+            <!-- 4. Add an About link to the left side of the bar. -->
+              a.nav-link(href='/about/') About   
     
-  .container
-    block content
+    .container
+      block content
 
-    footer
-      .row
-        .col-12
-          small &copy; Getting Mean - Simon Holmes/Clive Harber 2018
+      footer
+        .row
+          .col-12
+            small &copy; Getting Mean - Simon Holmes/Clive Harber 2018
 
     <!-- 3. Bring in jQuery and Popper, needed by Bootstrap. -->
     script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
