@@ -1,32 +1,27 @@
 extends layout
 
+include _includes/sharedHTMLfunctions
+
 block content
-    .row.banner
-        .col-12
-            h1 Loc8r
-                small &nbsp;Find places to work with wifi near you!
+  .row.banner
+    .col-12
+      h1= pageHeader.title
+        small &nbsp;#{pageHeader.strapLine}
 
-    .row
-        .col-12.col-md-8
-            p List area. 
-            .card
-                .card-block
-                    // Name of the listing and a link to the location
-                    h4
-                        a(href="/location") Starcups  
-                        // Use Font Awesome icons to output a star rating
-                        small &nbsp;
-                            i.fa.fa-star  
-                            i.fa.fa-star  
-                            i.fa.fa-star  
-                            i.fa.fa-star  
-                            i.fa.fa-star 
-                        // Use Bootstrap's badge helper class to display the distance away
-                        span.badge.badge-pill.badge-default.float-right 100m 
-                    p.address 123 High Street, Reading, RG6 1PS
+  .row
+    .col-12.col-md-8
+      each location in locations
+        .card
+          .card-block
+            h4
+              a(href='/location')= location.name
+              +outputRating(location.rating)
+              span.badge.badge-pill.badge-default.float-right= location.distance
+            p.address= location.address
+            .facilities
+              each facility in location.facilities
+                span.badge.badge-warning= facility
 
-                    // Facilities of the location, output using Bootstrap's badge classes
-                    .facilities
-                        span.badge.badge-warning Hot drinks
-                        span.badge.badge-warning Food
-                        span.badge.badge-warning Premium Wifi
+
+    .col-12.col-md-4
+      p.lead= sidebar
