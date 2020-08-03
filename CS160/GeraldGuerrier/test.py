@@ -1,4 +1,3 @@
-num = int(input("Enter an integer - > ")) 
+tr1 = 'a:b:c.d/e-f'
 
-if num > 0:
-    print
+print(str1.split(':'))
