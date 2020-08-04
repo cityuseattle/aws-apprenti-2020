@@ -1,0 +1,45 @@
+extends layout
+
+block content
+    //-   h1= title
+    //-   p Welcome to #{title}
+    // Page header that fills the entire width of the screen 
+    .row.banner
+        .col-12
+        h1 Loc8r
+            small &nbsp;Find places to work with wifi near you!
+
+    .row
+        // Container for the list of locations, spanning all 12 columns on extra-small
+        .col-12.col-md-8
+            //- p List area.
+            // Create a new Bootstrap card and card block to wrap the content
+            .card   
+                .card-block
+                    // Name of the listing and a link to the location
+                    h4
+                        a(href="/location") Starcups
+
+                        // Use Font Awesome icons to output a star rating
+                        small &nbsp;
+                            i.fas.fa-star
+                            i.fas.fa-star
+                            i.fas.fa-star
+                            i.far.fa-star
+                            i.far.fa-star
+                        // Use Bootstrap's badge helper class to display the distance away
+                        span.badge.badge-pill.badge-default.float-right 100m
+
+                    // Address of the location
+                    p.address 125 High Street, Reading, RG6 1PS
+
+                    // Facilities of the location, output using Bootstrap's badge classes
+                    .facilities
+                        span.badge.badge-warning Hot Drinks
+                        span.badge.badge-warning Food
+                        span.badge.badge-warning Premium WiFi
+
+        // Container for secondary or sidebar information, spanning all 12 columns on 
+        .col-12.col-md-4
+            p.lead Loc8r helps you find places to work when out and about.
+        
