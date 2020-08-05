@@ -4,7 +4,7 @@ const ctrlReviews = require('../controllers/reviews');
 
 // reviews
 router
-    .route('locations/:locationid/reviews')
+    .route('/locations/:locationid/reviews')
     .post(ctrlReviews.reviewsCreate);
 
 router

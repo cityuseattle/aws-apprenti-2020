@@ -219,7 +219,7 @@ const reviewsDeleteOne = (req, res) => {
               updateAverageRating(location._id);
               res
                 .status(204)
-                .json(null);
+                .json({'message': 'Delete Successful'});
             }
           });
         }
