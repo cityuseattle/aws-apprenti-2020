@@ -1,13 +1,13 @@
 extends layout
-
+ 
 block content
-  .row.banner                                                            
-    .col-12                                                              
-      h1 Starcups                                                        
+  .row.banner
+    .col-12
+      h1 Starcups
   .row
-    .col-12.col-lg-9                                                     
+    .col-12.col-lg-9
       .row
-        .col-12.col-md-6                                                 
+        .col-12.col-md-6
           p.rating
             i.fas.fa-star
             i.fas.fa-star
@@ -15,22 +15,22 @@ block content
             i.far.fa-star
             i.far.fa-star
           p 125 High Street, Reading, RG6 1PS
-          .card.card-primary                                             
-            .card-block                                                  
-              h2.card-title Opening hours                                
-              p.card-text Monday - Friday : 7:00am - 7:00pm              
-              p.card-text Saturday : 8:00am - 5:00pm                     
-              p.card-text Sunday : closed                                
-          .card.card-primary                                             
-            .card-block                                                  
+          .card.card-primary
+            .card-block
+              h2.card-title Opening hours
+              p.card-text Monday - Friday : 7:00am - 7:00pm
+              p.card-text Saturday : 8:00am - 5:00pm
+              p.card-text Sunday : closed
+          .card.card-primary
+            .card-block
               h2.card-title Facilities
               span.badge.badge-warning
-                i.fa.fa-check                                            
-                | &nbsp;Hot drinks                                       
+                i.fa.fa-check
+                | &nbsp;Hot drinks
               | &nbsp;
               span.badge.badge-warning
-                i.fa.fa-check                                            
-                | &nbsp;Food                                             
+                i.fa.fa-check
+                | &nbsp;Food
               | &nbsp;
               span.badge.badge-warning
                 i.fa.fa-check
@@ -40,12 +40,12 @@ block content
           .card.card-primary
             .card-block
               h2.card-title Location map
-              img.img-fluid.rounded(src='http://maps.googleapis.com/maps/api/staticmap?center=51.455041,-0.9690884&zoom=17&size=400x350&sensor=false&markers=51.455041,-0.9690884&scale=2&key=<API Key>')     
-  .row
+              #map
+      .row
         .col-12
           .card.card-primary.review-card
             .card-block
-              a.btn.btn-primary.float-right(href='/location/review/new') Add review                                               
+              a.btn.btn-primary.float-right(href='/location/review/new') Add review
               h2.card-title Customer reviews
               .row.review
                 .col-12.no-gutters.review-header
@@ -55,8 +55,8 @@ block content
                     i.fas.fa-star
                     i.far.fa-star
                     i.far.fa-star
-                  span.reviewAuthor  Simon Holmes
-                  small.reviewTimestamp     16 February 2017
+                  span.reviewAuthor Simon Holmes
+                  small.reviewTimestamp 16 February 2017
                 .col-12
                   p What a great place.
               .row.review
@@ -65,14 +65,27 @@ block content
                     i.fas.fa-star
                     i.fas.fa-star
                     i.fas.fa-star
-                    i.far.fa-star
-                    i.far.fa-star
-                  span.reviewAuthor  Charlie Chaplin
-                  small.reviewTimestamp     14 February 2017
+                    i.fas.fa-star
+                    i.fas.fa-star
+                  span.reviewAuthor Charlie Chaplin
+                  small.reviewTimestamp 14 February 2017
                 .col-12
                   p It was okay. Coffee wasn't great.
-        .col-12.col-lg-3                                                     
-          p.lead 
-            | Starcups is on Loc8r because it has accessible wifi and space to sit down with your laptop and get some work done.
-          p 
-            | If you've been and you like it - or if you don't - please leave a review to help other people just like you.
+    .col-12.col-lg-3
+      p.lead
+        | William Shakespeare, often called England's national poet, is considered the greatest dramatist of all time. His works are loved throughout the world, but Shakespeare's personal life is shrouded in mystery.
+      p
+        | William Shakespeare, often called England's national poet, is considered the greatest dramatist of all time. His works are loved throughout the world, but Shakespeare's personal life is shrouded in mystery.
+      
+    script.
+      // Initialize and add the map
+      function initMap() {
+      // The location of Uluru
+      var uluru = {lat: 47.606, lng: -122.332};
+      // The map, centered at Uluru
+      var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 12, center: uluru});
+      // The marker, positioned at Uluru
+      var marker = new google.maps.Marker({position: uluru, map: map});
+      }
+    script(defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0rYmtniwD4yQRjQopgZn5vv6rHoImVcU&callback=initMap")
