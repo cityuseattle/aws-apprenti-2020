@@ -4,12 +4,12 @@ const ctrlReviews = require('../controllers/reviews');
 
 // reviews
 router
-    .route('/locations/:locationid/reviews')
+    .route('/locations/:locationsid/reviews')
     .post(ctrlReviews.reviewsCreate);
 
 router
     .route('/locations/:locationid/reviews/:reviewid')
-    .get(ctrlReviews.reviewsDeadOne)
+    .get(ctrlReviews.reviewsReadOne)
     .put(ctrlReviews.reviewsUpdateOne)
     .delete(ctrlReviews.reviewsDeleteOne);
 
