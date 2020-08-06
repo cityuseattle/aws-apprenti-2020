@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+require('../models/locations')
 const Loc = mongoose.model('Location');
 
 const doSetAverageRating = (location) => {
