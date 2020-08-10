@@ -28,8 +28,8 @@ legend {
 }
 
 .navbar {
-  background-color: #ad1d28;
-  border-color: #911821;
+  background-color: #747172;
+  border-color: #030303;
 }
 
 .navbar-light .navbar-brand {
@@ -63,24 +63,24 @@ legend {
 }
 
 .card {
-  background-color: #469ea8;
+  background-color: #222424;
   padding: 1rem;
 }
 
 .card-primary {
-  border-color: #a2ced3;
+  border-color: #353636;
   margin-bottom: 0.5rem;
 }
 
 .banner {
   margin-top: 4em;
-  border-bottom: 1px solid #469ea8;
+  border-bottom: 1px solid #353636;
   margin-bottom: 1.5em;
   padding-bottom: 0.5em;
 }
 
 .review-header {
-  background-color: #31727a;
+  background-color: #88898a;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin-bottom: 0.5em;
@@ -93,8 +93,8 @@ legend {
 }
 
 .badge-default, .btn-primary {
-  background-color: #ad1d28;
-  border-color: #911821;
+  background-color: #504f4f;
+  border-color: #050001;
 }
 
 h4 a, h4 a:hover {
@@ -134,5 +134,5 @@ a:hover {
 body {
   font-family: "Cabin", Arial, sans-serif;
   color: #fff;
-  background-color: #108a93;
+  background-color: #21588b;
 }

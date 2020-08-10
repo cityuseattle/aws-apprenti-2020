@@ -24,19 +24,16 @@ block content
                     .card.card-primary
                         .card-block
                             h2.card-title Facilities
-                            span.badge.badge-warning
-                                i.fa.fa-check
-                                | &nbsp    
-                            |   &nbsp;
-                            span.badge.badge-warning
-                                i.fa.fa-check               
-                                | &nbsp;#{facility}                    
-                            | &nbsp;
+                            each facility in location.facilities
+                                span.badge.badge-warning
+                                    i.fa.fa-check
+                                    | &nbsp;#{facility}
+                                | &nbsp;
                 .col-12.col-md-6.location-map
                     .card.card-primary
                         .card-block
                             h2.card-title Location map
-                            img.img-fluid.rounded(src='https://cdn.mos.cms.futurecdn.net/u8wSHMmMMXzZuAFBCmcsCK.jpg')
+                            img.img-fluid.rounded(src='https://assets1.ignimgs.com/2018/04/13/mechwarrioronlinesolaris-1280-1523658471803.jpg')
             .row
                 .col-12
                     .card.card-primary.review-card

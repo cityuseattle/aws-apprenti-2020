@@ -1,6 +1,12 @@
 mixin outputRating(rating)
     small &nbsp;
         - for (let i =1; i <= rating; i++)
-            i.fas.fa-grin
+            if rating < 3 
+                i.fas.fa-grin(style='color:red')
+            else if rating === 3 
+                i.fas.fa-grin(style='color:gold')
+            else
+                i.fas.fa-grin(style='color:limegreen')
+
         - for (let i = rating; i < 5; i++)
-            i.far.fa-meh
+            i.far.fa-meh(style='color:black')
