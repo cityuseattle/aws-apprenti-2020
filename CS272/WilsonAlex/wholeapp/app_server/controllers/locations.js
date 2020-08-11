@@ -1,10 +1,10 @@
 const request = require('request');
 const apiOptions = {
-  server: 'http://localhost:3000',
-  if (process.env.NODE_ENV === 'production') {
-    apiOptions.server = 'https://YOUR_HEROKU_APP.herokuapp.com/'
-   }
+  server: 'http://localhost:3000'
 };
+if (process.env.NODE_ENV === 'production') {
+  apiOptions.server = 'https://pure-temple-67771.herokuapp.com';
+}
 
 const formatDistance = (distance) => {
   let thisDistance = 0;
