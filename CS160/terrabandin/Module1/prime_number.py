@@ -3,10 +3,10 @@
 num = int(input("Enter a number: "))
 
 if num > 1:
-    for i in range(2, num): # TODO: You can make this logic smarter/faster
+    for i in range(2, num/2):
         if (num % i) == 0:
             print(num, "is not a prime number.")
-            print(i, "times", num//i, "is", num, ".") #TODO: Why num//i 
+            print(i, "times", num/i, "is", num, ".")
             break
     else:
         print(num, "is a prime number.")
@@ -16,25 +16,22 @@ else:
 
 
 # task 2
-# need HELP
 def fibonacci():
-    num = int(input("How many fibonacci numbers would you like to generate?"))
-    i = 1
+    num = int(input("How many Fibonacci numers would you like to generate? "))
+
     if num == 0:
-        fib = []
-    elif num == 1:
-        fib = [1]
-    elif num == 2:
-        fib = [2]
-    elif num > 2:
-        fib = [1, 1]
-        while i < (num - 1):
-            fib.append(fib[i] + fib[i-1])
-            i += 1
-    return fib
+        return [0]
+    if num == 1:
+        return [1]
+    sequence = [0, 1]
+    for _ in range(2, num):
+        n = sequence[-1] + sequence[-2]
+        sequence.append(n)
+    return sequence
+
+
 
 print(fibonacci())
-input()
 
 # task 3
 age = int(input("Enter your age: "))
@@ -60,27 +57,28 @@ while True:
     age = (input(ask_age))
     if age == "quit":
         break
-    age = int(age)  #this will change the type if it isn't quit
+    try:
+        age = int(age)  #this will change the type if it isn't quit
 
-    if age < 3:
-        print("Your ticket is free!")
-    elif age <= 12:
-        print("Your ticket is $10!")
-    elif age > 12:
-        print("Your ticket is $15!")
-    else:
-        print("Please enter a number value.")
+        if age < 3:
+            print("Your ticket is free!")
+        elif age <= 12:
+            print("Your ticket is $10!")
+        else: # age > 12:
+            print("Your ticket is $15!")
+    except Exception:
+        print("Error: Enter a numerical value.")
+    
 
 # task 5 star pyramid
 
 def star_pyramid(n):
     k = 2 * n - 2
     for i in range(0, n):
-        for _ in range(0, k):
-            print(end=" ")
+        # print spaces before pyramid
+        print(" " * k, end="")
+        # print i+1 stars
+        print("* " * (i+1))
         k = k - 1
-        for _ in range(0, i+1):
-            print("* ", end="")
-        print("\r")
 n = 5
 star_pyramid(n)
