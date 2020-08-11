@@ -1,3 +1,6 @@
 [submodule "CS272/kendall-dyson/CS272/kendall-dyson/gettingMean-2"]
 	path = CS272/kendall-dyson/CS272/kendall-dyson/gettingMean-2
 	url = https://github.com/cliveharber/gettingMean-2.git
+[submodule "CS272/kendall-dyson/module01/CS272/kendall-dyson/module01/gettingMean-2"]
+	path = CS272/kendall-dyson/module01/CS272/kendall-dyson/module01/gettingMean-2
+	url = https://github.com/cliveharber/gettingMean-2.git
