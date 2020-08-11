@@ -47,8 +47,8 @@ block content
                                     .col-12.no-gutters.review-header
                                     span.rating
                                         +outputRating(review.rating)
-                                    span.reviewAuthor #{review.author}
-                                    small.reviewTimestamp
+                                    span.reviewAuthor &nbsp; #{review.author}
+                                    small.reviewTimestamp &nbsp;
                                         +formatDate(review.createdOn)
                                 .col-12
                                 p !{(review.reviewText).replace(/\n/g, '<br/>')}

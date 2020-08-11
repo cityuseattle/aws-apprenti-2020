@@ -4,11 +4,11 @@ mongoose.connect(dbURI, {useNewURLParser: true});
 mongoose.connection.on('connected', () => {
     console.log(`Mongoose connected to ${dbURI}`);
 });
-mongoose.connection.on('eerror', err => {
+mongoose.connection.on('error', err => {
     console.log('Mongoose connection error:', err);
 });
 mongoose.connection.on('disconnected', () => {
-    console.log('MOngoose disconnected');
+    console.log('Mongoose disconnected');
 });
 
 require('./locations');

@@ -6,10 +6,10 @@ const apiOptions = {
 
 const formatDistance = (distance) => {
   let thisDistance = 0;
-  let unit = 'm';
+  let unit = ' m';
   if (distance > 1000) {
     thisDistance = parseFloat(distance / 1000).toFixed(1);
-    unit = 'km';
+    unit = ' km';
   } else {
     thisDistance = Math.floor(distance);
   }
