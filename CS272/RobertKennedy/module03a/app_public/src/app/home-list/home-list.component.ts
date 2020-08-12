@@ -16,14 +16,15 @@ export class Location {
   styleUrls: ['./home-list.component.css']
 })
 export class HomeListComponent implements OnInit {
-  constructor(private Loc8rDataService: Loc8rDataService) { }
+
+  constructor(private loc8rDataService: Loc8rDataService) { }
 
   public locations: Location[];
 
   private getLocations(): void {
-    this.Loc8rDataService
-    .getLocations()
-      .then(foundLocations => this.locations = foundLocations);
+    this.loc8rDataService
+      .getLocations()
+        .then(foundLocations => this.locations = foundLocations);
   }
 
   ngOnInit() {
