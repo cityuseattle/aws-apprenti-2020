@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Loc8rDataService } from '../loc8r-data.service';
 
 export class Location {
   _id: string;
@@ -15,25 +16,18 @@ export class Location {
   styleUrls: ['./home-list.component.css']
 })
 export class HomeListComponent implements OnInit {
-  constructor() { }
+  constructor(private loc8rDataService: Loc8rDataService) { }
 
-  locations: Location[] = [{
-    _id: '123456',
-    name: 'Costy',
-    distance: 14000.1234,
-    address: 'High Street, Reading',
-    rating: 3,
-    facilities: ['Hot Drinks', 'Food', 'Power']
-  }, {
-    _id: '987654',
-    name: 'Starcups',
-    distance: 120.542,
-    address: 'High Street, Reading',
-    rating: 5,
-    facilities: ['WiFi', 'Food', 'Hot Drinks']
-  }];
-
-  ngOnInit(): void {
+  public locations: Location[];
+  
+  private getlocations(): void {
+    this.loc8rDataService
+      .getLocations()
+        .then(foundLocations => this.locations = foundLocations);
   }
 
+  ngOnInit() {
+    this.getlocations();
+  }
 }
+
