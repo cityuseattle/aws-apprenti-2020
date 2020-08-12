@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Loc8rDataService } from '../loc8r-data.service';
 
 export class Location {
   _id: string;
@@ -16,26 +17,38 @@ export class Location {
 })
 export class HomeListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loc8rDataService: Loc8rDataService) { }
 
-  locations: Location[] = [{
-    _id: 'costy', //change this ID !!!!!!!!!!!!!!!!!!!!!!!!!
-    name: 'Costy',
-    distance: 14.0,
-    address: 'High Street, Reading',
-    rating: 3,
-    facilities: ['Hot drinks', 'Food', 'Power']
-  }, {
-    _id: 'starcups', //change this ID !!!!!!!!!!!!!!!!!!!!!!!!!
-    name: 'Starcups',
-    distance: 120.542,
-    address: 'High Street, Reading',
-    rating: 5,
-    facilities: ['Hot drinks', 'Food', 'Wifi']
-  }];
+  public locations: Location[];
 
-  name = 'Costy Test';
-
-  ngOnInit(): void {
+  private getLocations(): void {
+    this.loc8rDataService
+      .getLocations()
+        .then(foundLocations => this.locations = foundLocations);
   }
+
+  ngOnInit() {
+    this.getLocations();
+  }
+
+  // locations: Location[] = [{
+  //   _id: 'costy',
+  //   name: 'Costy',
+  //   distance: 14.0,
+  //   address: 'High Street, Reading',
+  //   rating: 3,
+  //   facilities: ['Hot drinks', 'Food', 'Power']
+  // }, {
+  //   _id: 'starcups',
+  //   name: 'Starcups',
+  //   distance: 120.542,
+  //   address: 'High Street, Reading',
+  //   rating: 5,
+  //   facilities: ['Hot drinks', 'Food', 'Wifi']
+  // }];
+
+  // name = 'Costy Test';
+
+  // ngOnInit(): void {
+  // }
 }
