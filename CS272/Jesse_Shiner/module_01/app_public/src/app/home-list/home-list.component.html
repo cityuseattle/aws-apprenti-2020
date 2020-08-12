@@ -1,21 +1,21 @@
-<div class="card">
+<div class="card" *ngFor="let location of locations">
     <div class="card-block">
       <h4>
-        <a href="/location/590d8dc7a7cb5b8e3f1bfc48">Costy</a>
+        <a href="/location/{{location_id}}">{{location.name}}</a>
         <small>&nbsp;
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
+          <i class="fa{{ location.rating < 1 ? 'r' : 's' }} fa-star"></i>
+          <i class="fa{{ location.rating < 2 ? 'r' : 's' }} fa-star"></i>
+          <i class="fa{{ location.rating < 3 ? 'r' : 's' }} fa-star"></i>
+          <i class="fa{{ location.rating < 4 ? 'r' : 's' }} fa-star"></i>
+          <i class="fa{{ location.rating < 5 ? 'r' : 's' }} fa-star"></i>
         </small>
-        <span class="badge badge-pill badge-default float-right">14.0km</span>
+        <span class="badge badge-pill badge-default float-right">{{location.distance | distance}}</span>
       </h4>
-      <p class="address">High Street, Reading</p>
+      <p class="address">{{location.address}}</p>
       <div class="facilities">
-        <span class="badge badge-warning">hot drinks</span>
-        <span class="badge badge-warning">food</span>
-        <span class="badge badge-warning">power</span>
+        <span *ngFor="let facility of location.facilities" class="badge badge-warning">
+            {{facility}}
+        </span>
       </div>
     </div>
   </div>
