@@ -1,16 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
-// import { AppComponent } from './app.component';
 import { FrameworkComponent } from './framework/framework.component';
+import { AboutComponent } from './about/about.component';
+import { HtmlLineBreaksPipe } from './html-line-breaks.pipe';
+// import {APP_BASE_HREF} from '@angular/common';
+
 
 @NgModule({
   declarations: [
-    // AppComponent,
-    FrameworkComponent
+    FrameworkComponent,
+    AboutComponent,
+    HtmlLineBreaksPipe,
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      {
+        path: 'about',
+        component: AboutComponent
+      }      
+    ])
   ],
   providers: [],
   bootstrap: [FrameworkComponent]
