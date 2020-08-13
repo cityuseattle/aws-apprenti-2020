@@ -8,7 +8,6 @@ import { Location } from './home-list/home-list.component';
 })
 
 export class Loc8rDataService {
-
   constructor(private http: HttpClient) { }
 
   private apiBaseUrl = 'http://localhost:3000/api';
