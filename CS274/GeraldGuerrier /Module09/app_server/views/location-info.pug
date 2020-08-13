@@ -1,0 +1,59 @@
+extends layout
+include _includes/sharedHTMLfunctions
+
+block content
+	.row.banner
+		.col-12
+			h1= title
+	.row
+		.col-12.col-lg-9
+			.row
+				.col-12.col-md-6
+					+outputRating(location.rating)
+					p.address= location.address
+					.card.card-primary
+						.card-block
+							h2.card-title Opening hours
+							each open in location.openingTimes
+								p.card-text
+								| #{open.days} :
+								if open.closed
+									|&nbsp;closed
+								else
+									|&nbsp;#{open.opening} - #{open.closing}
+								bk
+					.card.card-primary
+						.card-block
+							h2.card-title Facilities
+							each facility in location.facilities
+								span.badge.badge-warning
+									i.fa.fa-check
+									| &nbsp;#{facility}
+								| &nbsp;&nbsp;
+				.col-12.col-md-6.location-map
+					.card.card-primary
+						.card-block
+							h2.card-title Location map
+							.text-center
+								img.image-fluid.mw-50.mh-50.rounded(src=`http://maps.googleapis.com/maps/api/staticmap?center=${location.coords.lat},${location.coords.lng}&zoom=17&size=400x400&sensor=false&markers=${location.coords.lat},${location.coords.lng}&scale=2&key=` style='width: 250px')
+          
+			.row
+				.col-12
+					.card.card-primary.review-card
+						.card-block
+							a.btn.purple-gradient.float-right(href=`/location/${location._id}/review/new`, role='button') 
+								| Add Review
+							h2.card-title Customer reviews
+							each review in location.reviews
+								.row.review
+									.col-12.no-gutters.review-header
+										span.rating
+											+outputRating(review.rating)
+										span.reviewAuthor &nbsp;#{review.author}
+										small.reviewTimestamp 
+											+formatDate(review.createdOn)
+									.col-12
+										p &nbsp;#{review.reviewText}
+		.col-12.col-lg-3
+			p.lead= `${title} is on ${pageHeader.title} because ${sidebar.context}`
+			p= sidebar.callToAction
