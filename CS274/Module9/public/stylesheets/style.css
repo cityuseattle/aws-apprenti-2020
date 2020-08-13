@@ -1,0 +1,173 @@
+/* body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+} */
+
+/* @import url("fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lobster', cursive;
+}
+
+.navbar-brand {
+  font-family: 'Lobster', cursive;
+}
+
+legend {
+  font-family: 'Lobster', cursive;
+}
+
+body {
+  font-family: "Cabin", Arial, sans-serif;
+  color: #ffffff;
+  background-color: #108a93;
+} */
+
+/* @import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
+ 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lobster', cursive;
+}
+
+legend {
+  font-family: 'Lobster', cursive;
+}
+
+/* .navbar-brand {
+  font-family: 'Lobster', cursive;
+} */
+
+/* .navbar {
+  background-color: #ad1d28;
+  border-color: #911821;
+}
+
+.navbar-light .navbar-brand {
+  font-family: 'Lobster', cursive;
+  color: #fff;
+}
+
+.navbar-light .navbar-toggler {
+  color: white;
+  border-color: white;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svgxml;charset=utf8,%3CsvgviewBox='0 0 30 30 'xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2'stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+}
+ 
+ 
+body {
+  font-family: "Cabin", Arial, sans-serif;
+  color: #ffffff;
+  background-color: #108a93;
+  padding-top: 30px;
+}  */
+
+@import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lobster', cursive;
+}
+
+legend {
+  font-family: 'Lobster', cursive;
+}
+
+.navbar {
+  background-color: #0C090A;
+  border-color: #0C090A;
+}
+
+.navbar-brand {
+  font-family: 'Lobster', cursive;
+  color: #fff;
+}
+
+.card {
+  background-color: #0C090A;
+  padding: 1rem;
+}
+
+.card-primary {
+  border-color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.banner {
+  margin-top: 4em;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 1.5em;
+  padding-bottom: 0.5em;
+}
+
+.review-header {
+  background-color: #fff;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.review {
+  margin-right: -16px;
+  margin-left: -16px;
+  margin-bottom: 0.5em;
+}
+
+.badge-default, .btn-primary {
+  background-color: #306EFF;
+  border-color: #306EFF;
+}
+
+h4 a, h4 a:hover {
+  color: #fff;
+}
+
+h4 small {
+  font-size: 60%;
+  line-height: 200%;
+  color: #aaa;
+}
+
+h1 small {
+  color: #aaa;
+}
+
+.address {
+  margin-bottom: 0.5rem;
+}
+
+.facilities span.badge {
+  margin-right: 2px;
+}
+
+p {
+    margin-bottom: 0.65rem;
+}
+
+a {
+  color: rgba(255, 255, 255, 0.8)
+}
+
+a:hover {
+  color:#fff
+}
+
+body {
+  font-family: "Cabin", Arial, sans-serif;
+  color: #FFD801;
+  background-color: #0C090A;
+  padding-top: 100px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-light .navbar-brand {
+  color: white;
+}

@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+  <!-- 4. Set the viewport metadata for the better display on mobile devices. -->
+    meta(name='viewport', content='width=device-width, inital-scale=1.0')
+
+    title= title
+    <!-- 2. Include Bootstrap and Font Awesome Css -->
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylehsheets/all.min.css')
+
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    block content
+    <!-- 3. Bring in jQuery and Popper, needed by Bootstrap. -->
+    //- script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7zbK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+    //- script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/I8WvCWPIPm49', crossorigin='anonymous')
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <!--2. Bring in the Bootstrap JavaScript file -->
+    script(src='/javascripts/bootstrap.min.js')

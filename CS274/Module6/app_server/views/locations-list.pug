@@ -1,0 +1,74 @@
+//- extends layout
+//- include _includes/sharedHTMLfunctions
+
+//- block content
+//-     //-   h1= title
+//-     //-   p Welcome to #{title}
+
+//-     // Page header that fills the entire width of the screen 
+//-     .row.banner
+//-         .col-12
+//-         h1= pageHeader.title
+//-             small &nbsp; #{pageHeader.strapline}
+
+//-     .row
+//-         // Container for the list of locations, spanning all 12 columns on extra-small
+//-         .col-12.col-md-8
+//-             each location in locations
+//-                 // p List area. 
+//-                 // Create a new Bootstrap card and card block to wrap the content  
+//-                 .card   
+//-                     .card-block
+//-                         // Name of the listing and a link to the location
+//-                         h4
+//-                             a(href="/location")= location.name
+//-                             // Use Font Awesome icons to output a star rating
+//-                             small &nbsp;
+//-                             +outputRating(location.rating)
+//-                             //-     - for (let i = 1; i <= location.rating; i++)
+//-                             //-         i.fas.fa-star
+//-                             //-     - for (let i = location.rating; i < 5; i++)
+//-                             //-         i.far.fa-star
+//-                             //- // Use Bootstrap's badge helper class to display the distance away
+//-                             span.badge.badge-pill.badge-default.float-right= location.distance
+//-                         // Address of the location
+//-                         p.address= location.address
+//-                         // Facilities of the location, output using Bootstrap's badge classes
+//-                         .facilities
+//-                             //- span.badge.badge-warning Hot Drinks
+//-                             //- span.badge.badge-warning Food
+//-                             //- span.badge.badge-warning Premium WiFi
+//-                             each facility in location.facilities 
+//-                                 span.badge.badge-warning= facility
+//-         // Container for secondary or sidebar information, spanning all 12 columns on 
+//-         .col-12.col-md-4
+//-             p.lead= sidebar
+        
+//-HOP06
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+  .row.banner
+    .col-12
+      h1= pageHeader.title
+        small &nbsp;#{pageHeader.strapLine}
+
+  .row
+    .col-12.col-md-8
+      each location in locations
+        .card
+          .card-block
+            h4
+              a(href='/location')= location.name
+              +outputRating(location.rating)
+              span.badge.badge-pill.badge-default.float-right= location.distance
+            p.address= location.address
+            .facilities
+              each facility in location.facilities
+                span.badge.badge-warning= facility
+
+    .col-12.col-md-4
+      p.lead= sidebar
+
