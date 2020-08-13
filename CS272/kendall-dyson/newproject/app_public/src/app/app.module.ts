@@ -5,14 +5,16 @@ import { RouterModule } from '@angular/router';
 
 import { FrameworkComponent } from './framework/framework.component';
 import { AboutComponent } from './about/about.component';
+import { HtmlLineBreaksPipe } from './html-line-breaks.pipe';
 
 @NgModule({
   declarations: [
     FrameworkComponent,
-    AboutComponent
+    AboutComponent,
+    HtmlLineBreaksPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
     RouterModule.forRoot([ 
       {
         path: 'about',
