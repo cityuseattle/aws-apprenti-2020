@@ -1,25 +1,37 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { HttpClientModule } from '@angular/common/http'
+import { FrameworkComponent } from './framework/framework.component';
+import { AboutComponent } from './about/about.component';
+import { RouterModule } from '@angular/router';
+import { HtmlLineBreaksPipe } from './html-line-breaks.pipe';
+import { HomepageComponent } from './homepage/homepage.component';
 import { HomeListComponent } from './home-list/home-list.component';
-import { ListItemComponent } from './home-list/list-item/list-item.component';
 import { DistancePipe } from './distance.pipe';
-import { Loc8rDataService } from './loc8r-data.service'
+import { HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
-  
+    FrameworkComponent,
+    AboutComponent,
+    HtmlLineBreaksPipe,
+    HomepageComponent,
     HomeListComponent,
-  
-    ListItemComponent,
-  
     DistancePipe
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      {
+        path: 'about',
+        component:AboutComponent
+      },
+      {
+        path: '',
+        component:HomepageComponent
+      }
+    ])
   ],
   providers: [],
-  bootstrap: [HomeListComponent,Loc8rDataService]
+  bootstrap: [FrameworkComponent]
 })
 export class AppModule { }
