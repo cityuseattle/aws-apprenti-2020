@@ -1,0 +1,21 @@
+{
+  "name": "module03a",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "engines": {
+    "node": "12.18.2",
+    "npm": "6.14.4"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "mongoose": "^5.9.27",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11"
+  }
+}
