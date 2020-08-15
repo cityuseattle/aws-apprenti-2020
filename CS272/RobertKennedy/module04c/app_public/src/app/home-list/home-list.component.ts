@@ -19,26 +19,28 @@ export class HomeListComponent implements OnInit {
 
   constructor(private Loc8rDataService: Loc8rDataService) { }
 
-  location: Location[] = [{
-    _id: '590d8dc7a7cb5b8e3f1bfc48',
-    name: 'Costy',
-    distance: 14.0,
-    address: 'High Street, Reading',
-    rating: 3,
-    facilities: ['hot drinks', 'food', 'power']
-  }, {
-    _id: '590d8dc7a7cb5b8e3f1bfc48',
-    name: 'Starcups',
-    distance: 120.542,
-    address: 'High Street, Reading',
-    rating: 5,
-    facilities: ['wifi', 'food', 'hot drinks']
-  }];
+//  location: Location[] = [{
+//    _id: '590d8dc7a7cb5b8e3f1bfc48',
+//    name: 'Costy',
+//    distance: 14.0,
+//    address: 'High Street, Reading',
+//    rating: 3,
+//    facilities: ['hot drinks', 'food', 'power']
+//  }, {
+//    _id: '590d8dc7a7cb5b8e3f1bfc48',
+//    name: 'Starcups',
+//    distance: 120.542,
+//    address: 'High Street, Reading',
+//   rating: 5,
+//    facilities: ['wifi', 'food', 'hot drinks']
+//  }];
 
-  private getLocations(): void {
-    this.Loc8rDataService
-      .getLocations()
-        .then(foundLocations => this.location = foundLocations);
+public locations: Location[];
+
+private getLocations(): void {
+  this.Loc8rDataService
+    .getLocations()
+      .then(foundLocations => this.locations = foundLocations);
   }
   ngOnInit(): void {
     this.getLocations();
