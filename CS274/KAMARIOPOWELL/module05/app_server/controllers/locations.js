@@ -2,16 +2,13 @@ const request = require('request');
 const apiOptions = {
   server: 'http://localhost:3000'
 };
-if (process.env.NODE_ENV === 'production') {
-  apiOptions.server = 'https://pure-temple-67771.herokuapp.com';
-}
 
 const formatDistance = (distance) => {
   let thisDistance = 0;
-  let unit = ' m';
+  let unit = 'm';
   if (distance > 1000) {
     thisDistance = parseFloat(distance / 1000).toFixed(1);
-    unit = ' km';
+    unit = 'km';
   } else {
     thisDistance = Math.floor(distance);
   }
