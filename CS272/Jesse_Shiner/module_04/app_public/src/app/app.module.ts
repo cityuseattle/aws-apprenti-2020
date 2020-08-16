@@ -9,6 +9,8 @@ import { HtmlLineBreaksPipe } from './html-line-breaks.pipe';
 import { HomepageComponent } from './homepage/homepage.component';
 import { HomeListComponent } from './home-list/home-list.component';
 import { DistancePipe } from './distance.pipe';
+import { PageHeaderComponent } from './page-header/page-header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { DistancePipe } from './distance.pipe';
     HtmlLineBreaksPipe,
     HomepageComponent,
     HomeListComponent,
-    DistancePipe
+    DistancePipe,
+    PageHeaderComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
