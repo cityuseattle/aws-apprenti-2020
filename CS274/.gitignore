@@ -1,8 +1,0 @@
-.backup/
-.test/
-.vscode/
-*.out
-*.log
-*.err
-DEADJOE
-node_modules/

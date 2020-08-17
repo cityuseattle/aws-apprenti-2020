@@ -3,6 +3,16 @@
 .idea/
 CS274.old/
 
+.backup/
+.test/
+.vscode/
+*.out
+*.log
+*.err
+DEADJOE
+node_modules/
+
+
 # Vagrant
 .vagrant/
 
