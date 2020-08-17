@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import {AppComponent} from "./app.component";
 import { PageHeaderComponent } from './page-header/page-header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PageHeaderComponent } from './page-header/page-header.component';
     HomeListComponent,
     DistancePipe,
     ChatbotComponent,
-    PageHeaderComponent
+    PageHeaderComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
