@@ -8,6 +8,9 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { HomeListComponent } from './home-list/home-list.component';
 import { DistancePipe } from './distance.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { PageHeaderComponent } from './page-header/page-header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { RatingStarsComponent } from './rating-stars/rating-stars.component';
 @NgModule({
   declarations: [
     FrameworkComponent,
@@ -15,7 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
     HtmlLineBreaksPipe,
     HomepageComponent,
     HomeListComponent,
-    DistancePipe
+    DistancePipe,
+    PageHeaderComponent,
+    SidebarComponent,
+    RatingStarsComponent
   ],
   imports: [
     BrowserModule,
