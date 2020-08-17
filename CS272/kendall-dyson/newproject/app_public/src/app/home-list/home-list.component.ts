@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Loc8rDataService } from '../loc8r-data.service';
+import { GeolocationService } from '../geolocation.service';
 
 
 
@@ -20,18 +21,48 @@ export class Location {
 })
 export class HomeListComponent implements OnInit {
 
-  constructor(private Loc8rDataService: Loc8rDataService) { }
+  constructor(
+    private Loc8rDataService: Loc8rDataService, 
+    private geoLocationService: GeolocationService
+  ) { }
+  
   public locations: Location [];
 
-  private getLocations(): void {
+  public message: string;
+
+  private getLocations(position: any): void {
+    this.message = 'Searching for nearby places';
+    const lat: number = position.coords.latitude;
+    const lng: number = position.coords.longitude;
     this.Loc8rDataService
-      .getLocations()
-        .then(foundlocations => this.locations = foundlocations);
+      .getLocations(lng, lat)
+      .then(foundlocations => { 
+        this.message = foundlocations.length > 0 ? '' :'No locations found';
+        this.locations = foundlocations;
+    });
   }
 
-  ngOnInit(){
-    this.getLocations();
+  private getPosition(): void {
+    this.message = 'Getting your location...';
+    this.geoLocationService.getPosition (
+      this.getLocations.bind (this),
+      this.showError.bind (this),
+      this.noGeo.bind (this));
+  
   }
+
+  private showError(error: any): void {
+    this.message = error.message;
+  };
+
+  private noGeo (): void {
+    this.message  = 'Geolocation not supported by this browser.';
+  };
+
+  ngOnInit(){
+    this.getPosition();
+  }
+
 }  
 
 
