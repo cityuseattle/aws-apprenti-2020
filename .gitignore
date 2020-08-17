@@ -1,6 +1,7 @@
 # Editors
 .vscode/
 .idea/
+CS274.old/
 
 # Vagrant
 .vagrant/
