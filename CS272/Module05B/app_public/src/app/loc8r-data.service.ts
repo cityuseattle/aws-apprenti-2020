@@ -14,7 +14,7 @@ export class Loc8rDataService {
   public getLocations(lat: number, lng: number): Promise<Location[]> {
     //const lng: number = -0.7992599;
     //const lat: number = 51.378091;
-    const maxDistance: number = 2000000000;
+    const maxDistance: number = 200000;
     const url: string = `${this.apiBaseUrl}/locations?lng= ${lng}&lat=${lat}&maxDistance=${maxDistance}`;
     return this.http
       .get(url)
