@@ -6,21 +6,21 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class DistancePipe implements PipeTransform {
 
   transform(distance: number): string {
-    const isNumeric = (n) => !isNaN(parseFloat(n)) && isFinite(n);
+    const isNumeric = function (n) {
+      return !isNaN(parseFloat(n)) && isFinite(n);
+    };
 
     if (distance && isNumeric(distance)) {
       let thisDistance = '0';
-      let unit = ' m';
+      let unit = 'm';
       if (distance > 1000) {
-        thisDistance = (distance/1000).toFixed(1);
-        unit = ' km';
-      } else {
-        thisDistance = Math.floor(distance).toString();
-      }
-      return thisDistance + unit;
+        thisDistance = (distance / 1000).toFixed(1);
+        unit = 'km';
     } else {
-      return '?';
-    }
+      thisDistance = Math.floor(distance).toString();
+    } 
+    return thisDistance + unit;
+  } else {
+    return '?';
   }
-
-}
+}}

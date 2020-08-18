@@ -11,7 +11,7 @@ export class GeolocationService {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(cbSuccess, cbError);
     } else {
-      cbNoGeo;
+      cbNoGeo();
     }
   }
 }
