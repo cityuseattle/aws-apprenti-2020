@@ -1,0 +1,16 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+  .row.banner
+    .col-12
+      h1= pageHeader.title
+        small &nbsp;#{pageHeader.strapLine}
+
+  .row
+    .col-12.col-md-8
+      .error= message
+
+    .col-12.col-md-4
+      p.lead= sidebar
