@@ -2,20 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { Loc8rDataService } from '../loc8r-data.service';
 import { GeolocationService } from '../geolocation.service';
 
-export class Location {
-  _id: string;
-  name: string;
-  distance: number;
-  address: string;
-  rating: number;
-  facilities: string[];
-}
+import { Location } from '../location';
+
+// export class Location {
+//      _id: string;
+//     name: string;
+//     distance: number;
+//     address: string;
+//     coords: number[];
+//     rating: number;
+//     facilities: string[];
+//     // openingTimes: Array<any>;
+//     reviews: any[];
+//   }
+
 
 @Component({
   selector: 'app-home-list',
   templateUrl: './home-list.component.html',
   styleUrls: ['./home-list.component.css']
 })
+
 export class HomeListComponent implements OnInit {
 
   constructor(
