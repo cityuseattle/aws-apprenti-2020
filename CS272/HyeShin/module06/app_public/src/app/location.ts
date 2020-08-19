@@ -6,7 +6,7 @@ class OpeningTimes {
   }
 
   export class Review {
-      authorL: string;
+      author: string;
       rating: number;
       reviewText: string;
   }

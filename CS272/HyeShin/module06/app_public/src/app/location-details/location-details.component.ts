@@ -13,7 +13,7 @@ export class LocationDetailsComponent implements OnInit {
   @Input() location: Location;
 
   public newReview: Review = {
-    authorL: '',
+    author: '',
     rating: 5,
     reviewText: ''
   };
@@ -30,7 +30,7 @@ export class LocationDetailsComponent implements OnInit {
   }
 
   private formIsValid(): boolean {
-    if (this.newReview.authorL && this.newReview.rating && this.newReview.reviewText) {
+    console.log(this.newReview.author); if (this.newReview.author && this.newReview.rating && this.newReview.reviewText) {
       return true;
     } else {
       return false;
@@ -39,7 +39,7 @@ export class LocationDetailsComponent implements OnInit {
 
   public onReviewSubmit(): void {
     this.formError = '';
-    if (this.formIsValid()) {
+    console.log(this.newReview.author); if (this.formIsValid()) {
       this.loc8rDataService.addReviewByLocationId(this.location._id, this.newReview)
         .then((review: Review) => {
           let reviews = this.location.reviews.slice(0);
@@ -48,13 +48,13 @@ export class LocationDetailsComponent implements OnInit {
           this.resetAndHideReviewForm();
         });
     } else {
-      this.formError = 'All fields requried, please try again';
+      this.formError = 'All fields required, please try again';
     }
   }
 
   private resetAndHideReviewForm(): void {
     this.formVisible = false;
-    this.newReview.authorL = '';
+    this.newReview.author = '';
     this.newReview.rating = 5;
     this.newReview.reviewText = '';
   }
