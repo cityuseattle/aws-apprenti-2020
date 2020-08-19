@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Loc = mongoose.model('Location');
 
 const locationsListByDistance = async (req, res) => {
+  console.log('locationsList');
   const lng = parseFloat(req.query.lng);
   const lat = parseFloat(req.query.lat);
   const near = {
@@ -40,6 +41,7 @@ const locationsListByDistance = async (req, res) => {
         distance: `${result.distance.calculated.toFixed()}`
       }
     });
+    console.log(locations);
     res
       .status(200)
       .json(locations);

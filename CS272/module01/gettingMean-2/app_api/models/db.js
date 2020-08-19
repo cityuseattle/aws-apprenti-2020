@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 const readLine = require('readline');
 
-let dbURL = 'mongodb://127.0.0.1/Loc8r';
+let dbURL = 'mongodb+srv://loc8r-admin:HeyDockers241@cluster0.h1xw0.mongodb.net/loc8r?retryWrites=true&w=majority';
 if (process.env.NODE_ENV === 'production') {
   dbURL = process.env.DB_HOST || process.env.MONGODB_URI;
 }
 
+// const dbURI = "mongodb+srv://loc8r-admin:HeyDockers241@cluster0.h1xw0.mongodb.net/loc8r?retryWrites=true&w=majority"
 
 const connect = () => {
   setTimeout(() => mongoose.connect(dbURL, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }), 1000);
@@ -60,3 +61,4 @@ process.on('SIGTERM', () => {
 connect();
 
 require('./locations');
+require('./users');
