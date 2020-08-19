@@ -17,7 +17,7 @@ export class Location {
     distance: number;
     address: string;
     rating: number;
-    facilites: string[];
+    facilities: string[];
     reviews: Review[];
     coords: number[];
     openingTimes: OpeningTimes[];

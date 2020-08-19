@@ -16,7 +16,7 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
-    path: 'locations/:locationId',
+    path: 'location/:locationId',
     component: DetailsPageComponent
   }
 ];
