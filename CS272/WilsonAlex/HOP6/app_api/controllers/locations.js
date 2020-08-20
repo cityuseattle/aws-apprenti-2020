@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Loc = mongoose.model('Location');
 
 const locationsListByDistance = async (req, res) => {
-  console.log('locationsList');
+  console.log('locationsList'); // this is just to test/debug
   const lng = parseFloat(req.query.lng);
   const lat = parseFloat(req.query.lat);
   const near = {
