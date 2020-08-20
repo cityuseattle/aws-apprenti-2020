@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Location, Review } from './location';
-
 import { environment } from '../environments/environment';
 
-import { response } from '../../../../HOP1b/app';
+// import { response } from '../../../../HOP1b/app';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +16,7 @@ export class Loc8rDataService {
   private apiBaseUrl = environment.apiBaseUrl;
   public getLocations(lat: number, lng: number): Promise<Location[]> {
     const maxDistance: number = 200000;
-    const url: string = `${this.apiBaseUrl}/locations?lng=
-    ➥${lng}&lat=${lat}&maxDistance=${maxDistance}`;
+    const url: string = `${this.apiBaseUrl}/locations?lng=${lng}&lat=${lat}&maxDistance=${maxDistance}`;
     return this.http
       .get(url)
       .toPromise()

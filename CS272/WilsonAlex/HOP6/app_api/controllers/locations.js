@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Loc = mongoose.model('Location');
 
 const locationsListByDistance = async (req, res) => {
+  console.log('locationsList');
   const lng = parseFloat(req.query.lng);
   const lat = parseFloat(req.query.lat);
   const near = {
@@ -13,7 +14,7 @@ const locationsListByDistance = async (req, res) => {
     key: 'coords',
     spherical: true,
     maxDistance: 20000,
-    limit: 10
+    // limit: 10000
   };
   if ((!lng && lng !== 0) || (!lat && lat !== 0)) {
     return res

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const readLine = require('readline');
 
-const dbURL = 'mongodb+srv://Loc8r-admin:B1ll198787@cluster0.7fqpz.mongodb.net/locations?retryWrites=true&w=majority';
+const dbURL = 'mongodb+srv://Loc8r-admin:B1ll198787@cluster0.7fqpz.mongodb.net/Loc8r?retryWrites=true&w=majority';
   if (process.env.NODE_ENV === 'production') {
     dbURL = process.env.DB_HOST || process.env.MONGODB_URI;
 };
