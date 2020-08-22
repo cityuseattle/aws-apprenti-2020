@@ -3,7 +3,7 @@ const apiOptions = {
   server: 'http://localhost:3000'
 };
 if (process.env.NODE_ENV === 'production') {
-  apiOptions.server = 'https://pure-temple-67771.herokuapp.com';
+  apiOptions.server = 'https://cs727.herokuapp.com';
 }
 
 const formatDistance = (distance) => {
