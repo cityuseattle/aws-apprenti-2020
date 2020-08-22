@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+  
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/all.min.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+  body
+    nav.navbar.navbar-expand-sm.bg-light.navbar-light
+      a.navbar-brand(href='/') Loc8r
+          button.navbar-toggler(type='button', data-toggle='collapse',data-target='#navbarMain')
+            span.navbar-toggler-icon
+      ul.navbar-nav
+        li.nav-item.active
+          a.nav-link(href="/") Home
+        li.nav-item
+          a.nav-link(href="/about/") About
+        li.nav-item
+          a.nav-link(href="/location/") Location
+    
+   
+
+    block content
+
+    footer
+      .row
+        .col-12
+          small &copy; Getting Mean - Simon Holmes/Clive Harber 2018
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+    script(src='/javascripts/bootstrap.min.js')

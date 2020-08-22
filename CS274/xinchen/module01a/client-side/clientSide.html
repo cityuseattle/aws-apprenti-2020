@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client-Side JS</title>
+</head>
+<body>
+    <h1>Built-in Function</h1>
+    <button onclick="document.getElementById('button').innerHTML = Date()">Click here to display the date time</button>
+    <p id="button"></p>
+    <br>
+    <h1>User-Defined Function</h1>
+    a: <input type="number" name="a" id="a"><br>
+    b: <input type="number" name="b" id="b"><br>
+    <button onclick="add(document.getElementById('a').value,document.getElementById('b').value)">Calculate</button>
+    <p id="sum"></p>
+</body>
+<script>
+    function add(a,b) {
+      var sum = parseInt(a) * parseInt(b);
+      document.getElementById("sum").innerHTML = a * b;    
+    }
+  </script>
+</html>
