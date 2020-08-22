@@ -11,12 +11,12 @@
                 <i class="fa{{ location.rating < 5 ? 'r' : 's' }} fa-star"></i>
             </small>
             <span class="badge badge-pill badge-default float-right">{{location.distance | distance}}</span>
-            </h4>
-            <p class="address">{{location.address}}</p>
-            <div class="facilities">
-              <span *ngFor="let facility of location.facilities" class="badge badge-warning">
+        </h4>
+        <p class="address">{{location.address}}</p>
+        <div class="facilities">
+            <span *ngFor="let facility of location.facilities" class="badge badge-warning">
                 {{facility}}
-              </span>
-            </div>
+            </span>
         </div>
+    </div>
 </div>

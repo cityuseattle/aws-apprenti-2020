@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-//import { RouterModule } from '@angular/router';
+// import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-//import { AppComponent } from './app.component';
+
 import { FrameworkComponent } from './framework/framework.component';
 import { AboutComponent } from './about/about.component';
 import { HtmlLineBreaksPipe } from './html-line-breaks.pipe';
@@ -19,10 +18,11 @@ import { LocationDetailsComponent } from './location-details/location-details.co
 import { DetailsPageComponent } from './details-page/details-page.component';
 import { MostRecentFirstPipe } from './most-recent-first.pipe';
 import { RatingStarsComponent } from './rating-stars/rating-stars.component';
+// import {APP_BASE_HREF} from '@angular/common';
+
 
 @NgModule({
   declarations: [
-    //AppComponent,
     FrameworkComponent,
     AboutComponent,
     HtmlLineBreaksPipe,
@@ -41,7 +41,21 @@ import { RatingStarsComponent } from './rating-stars/rating-stars.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // RouterModule.forRoot([
+    //   {
+    //     path: '',
+    //     component: HomepageComponent
+    //   },
+    //   {
+    //     path: 'about',
+    //     component: AboutComponent
+    //   },
+    //   {
+    //     path: 'location/:locationId',
+    //     component: DetailsPageComponent
+    //   }      
+    // ])
   ],
   providers: [],
   bootstrap: [FrameworkComponent]

@@ -9,9 +9,12 @@ import { Location } from '../location';
 //   name: string;
 //   distance: number;
 //   address: string;
+//   coords: number[];
 //   rating: number;
 //   facilities: string[];
-//   reviews: any[]
+//   // openingTimes: Array<any>;
+//   reviews: any[];
+
 // }
 
 @Component({
@@ -24,7 +27,7 @@ export class HomeListComponent implements OnInit {
   constructor(
     private loc8rDataService: Loc8rDataService,
     private geolocationService: GeolocationService
-    ) { }
+  ) { }
 
   public locations: Location[];
 
@@ -34,20 +37,22 @@ export class HomeListComponent implements OnInit {
     this.message = 'Searching for nearby places';
     const lat: number = position.coords.latitude;
     const lng: number = position.coords.longitude;
+    // const lng: number = -0.7992599;
+    // const lat: number = 51.378091;
     this.loc8rDataService
-      .getLocations(lat, lng)
-      .then(foundLocations => {
-        this.message = foundLocations.length > 0 ? '' :'No locations found'; 
-        this.locations = foundLocations;
-      });
+      .getLocations(lat,lng)
+        .then(foundLocations => {
+          this.message = foundLocations.length > 0 ? '' : 'No locations found';
+          console.log(foundLocations);
+          this.locations = foundLocations;
+        });
   }
-
   private getPosition(): void {
     this.message = 'Getting your location...';
     this.geolocationService.getPosition(
       this.getLocations.bind(this),
       this.showError.bind(this),
-      this.neGeo.bind(this)
+      this.noGeo.bind(this)
     );
   }
 
@@ -55,12 +60,29 @@ export class HomeListComponent implements OnInit {
     this.message = error.message;
   };
 
-  private neGeo(): void {
+  private noGeo(): void {
     this.message = 'Geolocation not supported by this browser.';
   };
 
   ngOnInit(): void {
     this.getPosition();
   }
-
 }
+
+
+
+  // locations: Location[] = [{
+  //   _id: "590d8dc7a7cb5b8e3f1bfc48",
+  //   name: 'Costy',
+  //   distance: 14.0,
+  //   address: 'High Street, Reading',
+  //   rating: 3,
+  //   facilities: ['hot drinks', 'food', 'power']
+  // }, {
+  //   _id: '590d8dc7a7cb5b8e3f1bfc48',
+  //   name: 'Starcups',
+  //   distance: 120.542,
+  //   address: 'High Street, Reading',
+  //   rating: 5,
+  //   facilities: ['wifi', 'food', 'hot drinks']
+  // }];
