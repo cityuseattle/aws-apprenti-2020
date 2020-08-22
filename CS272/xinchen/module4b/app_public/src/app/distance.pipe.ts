@@ -5,8 +5,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class DistancePipe implements PipeTransform {
 
-  transform(distance:number): unknown {
-    const isNumeric = (n) => !isNaN(parseFloat(n)) && isFinite(n);
+  transform(distance: number): string {
+    // tslint:disable-next-line: only-arrow-functions
+    const isNumeric = (n) => {
+      return !isNaN(parseFloat(n)) && isFinite(n);
+    };
+
     if (distance && isNumeric(distance)) {
       let thisDistance = '0';
       let unit = ' m';
@@ -17,9 +21,8 @@ export class DistancePipe implements PipeTransform {
         thisDistance = Math.floor(distance).toString();
       }
       return thisDistance + unit;
-    } else { 
+    } else {
       return '?';
     }
   }
-
 }

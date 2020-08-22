@@ -1,7 +1,8 @@
 @import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
+@import url("//fonts.googleapis.com/css2?family=Orbitron&family=Rock+Salt&display=swap|Cabin:400,700");
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lobster', cursive;
+  font-family: 'Orbitron', sans-serif;
 }
 
 legend {
@@ -9,49 +10,46 @@ legend {
 }
 
 .navbar {
-  background-color: #ad1d28;
-  border-color: #911821;
+  background-color: #787d7e;
+  border-color: #ffffff;
 }
 
 .navbar-light .navbar-brand {
-  font-family: 'Lobster', cursive;
+  font-family: 'Rock Salt', cursive;
   color: #fff;
 }
 
-.navbar-light .navbar-toggler {
-  color: white;
-  border-color: white;
-}
-
 .navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svgxml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+  background-image: url("data:image/svgxml;charset=utf8,%3Csvg viewBox='0 0 30 30'xmlns='http://www.w3.org/2000/svg'%3E% 3Cpath stroke='white' stroke-width='2'stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
 }
 
-.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
   color: white;
 }
 
 .card {
-  background-color: #469ea8;
+  background-color: #787d7e;
   padding: 1rem;
 }
 
 .card-primary {
-  border-color: #a2ced3;
+  border-color: #000000;
   margin-bottom: 0.5rem;
 }
 
 .banner {
   margin-top: 4em;
-  border-bottom: 1px solid #469ea8;
+  border-bottom: 1px solid #000000;
   margin-bottom: 1.5em;
   padding-bottom: 0.5em;
 }
 
 .review-header {
-  background-color: #31727a;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  background-color: #020202;
+  padding-top: 0.1em;
+  padding-bottom: 0.em;
   margin-bottom: 0.5em;
 }
 
@@ -62,8 +60,8 @@ legend {
 }
 
 .badge-default, .btn-primary {
-  background-color: #ad1d28;
-  border-color: #911821;
+  background-color: #5f5e5e;
+  border-color: #ffffff;
 }
 
 h4 a, h4 a:hover {
@@ -89,7 +87,7 @@ h1 small {
 }
 
 p {
-  margin-bottom: 0.65rem;
+    margin-bottom: 0.65rem;
 }
 
 a {
@@ -103,5 +101,7 @@ a:hover {
 body {
   font-family: "Cabin", Arial, sans-serif;
   color: #fff;
-  background-color: #108a93;
+  background-color: #b8752a;
 }
+
+

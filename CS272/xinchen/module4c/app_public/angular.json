@@ -144,10 +144,6 @@
           }
         }
       }
-    }
-  },
-  "defaultProject": "module04",
-  "cli": {
-    "analytics": false
-  }
+    }},
+  "defaultProject": "module04"
 }

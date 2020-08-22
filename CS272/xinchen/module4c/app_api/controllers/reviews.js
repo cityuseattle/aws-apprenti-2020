@@ -13,7 +13,7 @@ const doSetAverageRating = (location) => {
       if (err) {
         console.log(err);
       } else {
-        console.log(`Average rating updated to ${location.rating}`);
+        console.log(`Average rating  updated to ${location.rating}`);
       }
     });
   }
