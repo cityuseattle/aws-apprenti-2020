@@ -49,7 +49,7 @@ const locationSchema = new mongoose.Schema({
   facilities: [String],
   coords: {
     type: {type: String},
-    coordinates: [Number]
+    coordinates: [Number, Number]
   },
   openingTimes: [openingTimesSchema],
   reviews: [reviewSchema]
@@ -57,3 +57,4 @@ const locationSchema = new mongoose.Schema({
 locationSchema.index({coords: '2dsphere'});
 
 mongoose.model('Location', locationSchema);
+
