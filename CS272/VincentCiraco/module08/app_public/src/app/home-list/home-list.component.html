@@ -1,0 +1,41 @@
+
+<div class="md-form">
+    <input type="search" [(ngModel)]="searchText" placeholder="Search text">
+  </div>
+  <ng-container *ngFor="let location of locations" >
+    <li *ngIf="location.name == searchText; else elseBlock">
+        <div class="card">
+            <div class="card-block">
+                <h4>
+                    <a routerLink="/location/{{location._id}}">{{location.name}}</a>
+                    <small>&nbsp;
+                        <app-rating-stars [rating]="location.rating"></app-rating-stars>
+                    </small>
+                    <span class="badge badge-pill badge-default float-right">{{location.distance | distance}}</span>
+                </h4>
+                <p class="address">{{location.address}}</p>
+                <div class="facilities">
+                    <span *ngFor="let facility of location.facilities" class="badge badge-warning">{{facility}}</span>
+                </div>
+            </div>
+        </div>
+    </li>
+    <ng-template #elseBlock></ng-template>
+ </ng-container>
+
+<div class="error">{{message}}</div>
+<div class="card">
+    <div class="card-block" *ngFor="let location of locations">
+        <h4>
+            <a routerLink="/location/{{location._id}}">{{location.name}}</a>
+            <small>&nbsp;
+                <app-rating-stars [rating]="location.rating"></app-rating-stars>
+            </small>
+            <span class="badge badge-pill badge-default float-right">{{location.distance | distance}}</span>
+        </h4>
+        <p class="address">{{location.address}}</p>
+        <div class="facilities">
+            <span *ngFor="let facility of location.facilities" class="badge badge-warning">{{facility}}</span>
+        </div>
+    </div>
+</div>
