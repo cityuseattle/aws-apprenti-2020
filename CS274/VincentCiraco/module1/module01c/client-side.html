@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head> </head>
+    <body>
+        <h2>Built-IN Function</h2>
+        <button type="button" onclick="document.getElementById('demoDate').innerHTML = Date()">...</button>
+        <p id="demoDate"></p>
+
+        <h2>User-Defined Function</h2>
+        
+            <form>
+            1st Number : <input type="text" id="firstNumber" /><br>
+            2nd Number: <input type="text" id="secondNumber" /><br>
+            <input type="button" onClick="multiplyBy()" Value="Multiply" />
+            </form>
+            <p>The Result is : <br>
+            <span id = "result"></span>
+            </p>
+            <script type=text/javascript>
+            
+            function multiplyBy()
+            {
+                    num1 = document.getElementById("firstNumber").value;
+                    num2 = document.getElementById("secondNumber").value;
+                    document.getElementById("result").innerHTML = num1 * num2;
+            }
+            </script>
+    </body>
+</html>
