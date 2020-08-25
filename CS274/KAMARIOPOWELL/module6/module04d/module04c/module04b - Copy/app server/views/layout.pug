@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title= title
+    <!-- 2. Include Bootstrap and Font Awesome CSS -->
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/all.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    nav.navbar.fixed-top.navbar-expand-md.navbar-Light
+      .container
+        a.navbar-brand(href='/') Loc8r
+          button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarMain')
+            span.navbar-toggler-icon
+    
+        #navbarMain.navbar-collapse.collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item
+              a.nav-link(href='/about/') About
+
+    .container.content
+      block content
+
+      footer  
+        .row  
+          .col-12
+            small &copy; Getting Mean - Simon Holmes/Clive Harber 2018
