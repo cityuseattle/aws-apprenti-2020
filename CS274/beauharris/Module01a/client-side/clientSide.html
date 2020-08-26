@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Client-Side JS</title>
+    </head>
+
+    <body>
+    <h2>Built-In Function</h2>
+    <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">Click to display Date and
+    Time.</button>
+
+    <p id="demo"></p>
+
+    <h2>User-Defined Function</h2>
+    <p>Call a function which performs a calculation</p>
+    <p id="func"></p>
+    <script>
+        function calcProduct(a, b){
+            //function returns product of two numbers
+            return a * b;
+        }
+        document.getElementById("func").innerHTML = calcProduct(5, 5);
+    </script>
+    </body>
+</html>
