@@ -12,9 +12,9 @@ export class HomepageComponent implements OnInit {
   public pageContent = {
     header: {
       title: 'Loc8r',
-      strapline: 'Find places to work with wifi near you!'
+      strapline: 'Find reviews for local restaraunts in the Pacific Northwest!'
     },
-    sidebar : 'Looking for wifi and a seat? Loc8r helps you find places to work when out and about. Perhaps with coffee, cake or a pint? Let Loc8r help you find the place you\'re looking for.'
+    sidebar : 'Looking for a good place to sit and eat?  Loc8r is a place where you can quickly search for restaurants in your area and read what other think.  Additionally we invite you to add your own thoughts to help others in their search.'
   };
 
   ngOnInit(): void {

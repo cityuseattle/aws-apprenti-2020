@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-
+import { MeetusComponent } from '../meetus/meetus.component';
 import { AboutComponent } from '../about/about.component';
 import { HomepageComponent } from '../homepage/homepage.component';
 import { DetailsPageComponent } from '../details-page/details-page.component';
@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'locations/:locationId',
     component: DetailsPageComponent
+  },
+  {
+    path: 'meetus',
+    component: MeetusComponent
   }
 ];
 

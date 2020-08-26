@@ -1,107 +1,127 @@
 @import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
-@import url("//fonts.googleapis.com/css2?family=Orbitron&family=Rock+Salt&display=swap|Cabin:400,700");
-
+@import url("//fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Orbitron&family=Rock+Salt&display=swap|Cabin:400,700");
+ 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Orbitron', sans-serif;
+  text-shadow: 2px 2px #000000;
 }
-
+ 
+h2 small {
+  font-family: 'Gloria Hallelujah', cursive;
+  text-shadow: 2px 2px #000000;
+}
+ 
 legend {
   font-family: 'Lobster', cursive;
 }
-
+ 
+/* nav bar color */
 .navbar {
-  background-color: #787d7e;
+  background-color: #6e3429e5;
   border-color: #ffffff;
 }
-
+ 
+/* Loc8r text color */
 .navbar-light .navbar-brand {
   font-family: 'Rock Salt', cursive;
   color: #fff;
+  text-shadow: 2px 2px #000000;
+ 
 }
-
+ 
 .navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svgxml;charset=utf8,%3Csvg viewBox='0 0 30 30'xmlns='http://www.w3.org/2000/svg'%3E% 3Cpath stroke='white' stroke-width='2'stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+  background-image: url("https://images.vexels.com/media/users/3/144097/isolated/preview/3dedcd235214cdde6b4e171fdbf66c9d-heart-icon-by-vexels.png")
 }
-
+ 
+/* links color */
 .navbar-light .navbar-nav .nav-link,
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
   color: white;
+  text-shadow: 2px 2px #000000;
+ 
 }
-
+ 
+/* locations background */
 .card {
-  background-color: #787d7e;
+  background-color: #525151af;
   padding: 1rem;
 }
-
+ 
 .card-primary {
   border-color: #000000;
   margin-bottom: 0.5rem;
 }
-
+ 
 .banner {
   margin-top: 4em;
   border-bottom: 1px solid #000000;
   margin-bottom: 1.5em;
   padding-bottom: 0.5em;
 }
-
+ 
 .review-header {
   background-color: #020202;
   padding-top: 0.1em;
   padding-bottom: 0.em;
   margin-bottom: 0.5em;
 }
-
+ 
 .review {
   margin-right: -16px;
   margin-left: -16px;
   margin-bottom: 0.5em;
 }
-
+ 
+/* distance background */
 .badge-default, .btn-primary {
-  background-color: #5f5e5e;
+  background-color: #b42f2f;
   border-color: #ffffff;
 }
-
+ 
 h4 a, h4 a:hover {
   color: #fff;
 }
-
+ 
+/* star color */
 h4 small {
   font-size: 60%;
   line-height: 200%;
-  color: #aaa;
+  color: rgb(255, 255, 255);
 }
-
+ 
+/* find place to work text color */
 h1 small {
-  color: #aaa;
+  color: rgb(170, 170, 170);
+ 
 }
-
+ 
 .address {
   margin-bottom: 0.5rem;
 }
-
+ 
 .facilities span.badge {
   margin-right: 2px;
 }
-
+ 
 p {
     margin-bottom: 0.65rem;
 }
-
+ 
 a {
   color: rgba(255, 255, 255, 0.8)
 }
-
+ 
 a:hover {
   color:#fff
 }
-
+ 
+/* main background */
 body {
   font-family: "Cabin", Arial, sans-serif;
   color: #fff;
+  background-image: url("https://www.nationalgeographic.com/content/dam/travel/Guide-Pages/north-america/seattle-travel.adapt.1900.1.jpg");
+  background-attachment: fixed;
   background-color: #b8752a;
 }
-
 
