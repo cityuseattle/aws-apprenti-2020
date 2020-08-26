@@ -38,39 +38,39 @@
         }
     }
 
-    .board-wrapper {
-        display: flex;
-        flex-grow: 1;
-        overflow-x: auto;
-
-        .board-columns {
+        .board-wrapper {
             display: flex;
             flex-grow: 1;
+            overflow-x: auto;
 
-            .board-column {
+            .board-columns {
                 display: flex;
-                flex-direction: column;
                 flex-grow: 1;
-                flex-basis: 0; // to force the columns to all be the same size, regardless of content
 
-                min-width: 300px;
-                margin: 50px;
-                padding: 25px;
+                .board-column {
+                    display: flex;
+                    flex-direction: column;
+                    flex-grow: 1;
+                    flex-basis: 0; // to force the columns to all be the same size, regardless of content
 
-                border-radius: 4px;
+                    min-width: 300px;
+                    margin: 50px;
+                    padding: 25px;
 
-                background: rgba(white, 0.5);
+                    border-radius: 4px;
 
-                &:not(:first-child) {
-                    margin-left: 0;
-                }
+                    background: rgba(white, 0.5);
 
-                .column-title {
-                    font-size: 20px;
-                    font-weight: 800;
-                    font-family: 'Lato', sans-serif;
-                    text-transform: uppercase;
-                    margin-bottom: 20px;
+                    &:not(:first-child) {
+                        margin-left: 0;
+                    }
+
+                    .column-title {
+                        font-size: 20px;
+                        font-weight: 800;
+                        font-family: 'Lato', sans-serif;
+                        text-transform: uppercase;
+                        margin-bottom: 20px;
                 }
             }
         }
@@ -115,3 +115,18 @@
 .tasks-container.cdk-drop-list-dragging .task:not(.cdk-drag-placeholder) {
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
+
+
+.calendar {
+    padding: 0px;
+    background-color: transparent;
+    border-style: none;
+}
+
+.drive {
+    display: flex;
+    flex-grow: 1;
+    overflow-x: auto;
+}
+
+
