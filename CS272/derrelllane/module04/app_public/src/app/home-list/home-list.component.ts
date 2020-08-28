@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Loc8rDataService } from '../loc8r-data.service';
+// linking component and the loc8r data service, import from source file
+import { Loc8rDataService } from '../loc8r-data.service'; 
+import { GeolocationService } from '../geolocation.service';
 
-export class Location{
+export class Location {
   _id: string;
-  name: string;
+  name: string; 
   distance: number;
   address: string;
   rating: number;
@@ -15,34 +17,48 @@ export class Location{
   templateUrl: './home-list.component.html',
   styleUrls: ['./home-list.component.css']
 })
+
+
 export class HomeListComponent implements OnInit {
 
-  constructor(private loc8rDataService: Loc8rDataService) { }
+  // Inject the loc8rdata and geolocation services into the component 
+  constructor(private loc8rDataService: Loc8rDataService,
+    private geolocationService: GeolocationService) { }
 
-  locations: Location[] = [{
-    _id: '590d8c7a7cb5b8e3f1bfc48',
-    name: 'Costy',
-    distance: 14000.1234,
-    address: 'High Street, Reading',
-    rating: 3,
-    facilities: ['hot drinks', 'food', 'power']
-  }, {
-    _id: '590d8c7a7cb5b8e3f1bfc48',
-    name: 'Starcups',
-    distance: 120,
-    address: 'High Street, Reading',
-    rating: 5,
-    facilities: ['eifi', 'food', 'hot drinks']
-  }];
-  
-  private getLocations(): void{
-    this.loc8rDataService
-      .getLocations()
-        .then(foundLocations => this.locations = foundLocations);
+  // create method to call data service method and handle promise response 
+  public locations: Location[];            // location declaration = no default
+  public message: string;
+
+  private getLocations(position: any): void {               // getLocations method accepts no parameter and returns nothing                  
+    this.message = 'Searching for nearby places.';
+    const lat: number = position.coords.latitude;       
+    const lng: number = position.coords.longitude;      
+    this.loc8rDataService                                            
+      .getLocations(lat,lng)                            // call data service method      
+      .then(foundLocations => { 
+        this.message = foundLocations.length > 0 ? '': 'No locations found'; 
+        this.locations = foundLocations;
+      });
+  } 
+
+  private getPosition() : void {
+    this.message = 'Getting your location ...';
+    this.geolocationService.getPosition (
+      this.getLocations.bind(this),
+      this.showError.bind(this),
+      this.noGeo.bind(this));
   }
 
-  ngOnInit(): void {
-    this.getLocations();
-  }
+  private showError(error : any): void {
+    this.message = error.message;
+  };
 
+  private noGeo() : void {
+    this.message = "Geolocation not supported by this browser.";
+  };
+
+ 
+  ngOnInit() {      // makes sure services are only called when available
+    this.getPosition();  // data call 
+  }
 }

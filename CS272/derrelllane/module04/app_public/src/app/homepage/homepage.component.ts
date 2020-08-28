@@ -9,6 +9,13 @@ export class HomepageComponent implements OnInit {
 
   constructor() { }
 
+  public pageContent = {
+    header: {
+      title: 'Loc8r',
+      strapline: 'Find places to work with wifi near you!'
+    }
+  }
+
   ngOnInit(): void {
   }
 
